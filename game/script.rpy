@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+﻿# odio programar
 
 init:
     image black = "#000000"
@@ -176,7 +176,7 @@ label timies1:
                     m "Este Jen Follet, desde que creó las Trollface Coins sólo toma malas decisiones."
                     #Aquí va la imagen del toweet, ya se peleará con ello la Silvia del futuro.
                     m "La última actividad digital de la víctima es un tweet que habla sobre un videojuego."
-                    m "Parece que no era de su agrado"
+                    m "Parece que no era de su agrado."
                     m "Mmm...es bastante curioso que la diferencia de tiempo entre la publicación de este toweet y la hora de la muerte sea tan pequeña..."
                     m "¿Es posible que el asesino estuviera en la misma habitación que la víctima en el momento de la publicación?"
                     m "Pero...no había signos de que más de una persona haya estando en la casa..."
