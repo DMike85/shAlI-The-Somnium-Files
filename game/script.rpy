@@ -97,10 +97,10 @@ label start:
 
     "Mora avanza un poco hasta que se encuentra con 4 objetos."
 
-    menu optional_name:
+    menu:
         "Espada legendaria":
             "Parece una espada, está muy decorada"
-            menu optional_name:
+            menu:
                 "Investigar":
                     "a" #block of code to run
                 "Alzar":
