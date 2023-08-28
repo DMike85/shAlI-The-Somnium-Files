@@ -2,6 +2,7 @@
 
 init:
     image black = "#000000"
+    image white = "#FFFFFF"
     image somnium = "somnium.jpg"
     $ flash = Fade(.25, 0, .75, color="#fff")
 # Declare characters used by this game. The color argument colorizes the
@@ -11,6 +12,7 @@ define audio.explosion = "audio/explosion.mp3"
 define audio.somnium_scan = "audio/somnium_scan.ogg"
 define audio.mental_lock = "audio/mental_lock.ogg"
 define audio.investigation = "audio/investigation.mp3"
+define audio.psync_init = "audio/psync_init.mp3"
 define m = Character("Mora")
 define pancake = Character("Pantechi")
 define spam = Character("SPAMTON", kind=nvl)
@@ -35,8 +37,18 @@ label start:
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
+    scene black
+    play sound psync_init
+    pause(6)
+    scene white
+    with Dissolve(2)
+    pause(0.5)
     play movie "video/somn_intro.mpeg"
+    pause(1)
+    scene black
+    pause(6)
     #$ renpy.pause(6, hard=True)
+
     play music investigation
     scene somnium
     with Dissolve(1.5)
@@ -45,7 +57,7 @@ label start:
 
     # These display lines of dialogue.
 
-    m "¿Eh? ¿Por qué estoy haciendo esto?"
+    m "¿Eh? {w=1.0}¿Por qué estoy haciendo esto?"
 
     m "..."
 
@@ -55,15 +67,15 @@ label start:
 
     "Junto a Mora os dedicáis a observar detenidamente la habitación."
 
-    m "Esto tiene que ser un error... No puede ser el Somnium de Shali."
+    m "Esto tiene que ser un error...{w=0.75} No puede ser el Somnium de Shali."
 
-    m "Es...muy...¿Blanco?"
+    m "Es...{w=0.75} muy... {w=0.75}¿Blanco?"
 
     m "Algo me dice que no debería verse así..."
 
     m "..."
 
-    m "No me gusta la sensación que transmite este sitio... Cuanto antes averigüemos qué ha ocurrido, mejor."
+    m "No me gusta la sensación que transmite este sitio...{w=0.75} Cuanto antes averigüemos qué ha ocurrido, mejor."
 
     m "Démonos prisa."
 
