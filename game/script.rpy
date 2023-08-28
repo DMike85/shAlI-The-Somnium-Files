@@ -2,16 +2,18 @@
 
 init:
     image black = "#000000"
+    image somnium = "somnium.jpg"
     $ flash = Fade(.25, 0, .75, color="#fff")
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+define audio.spamton ="audio/Spamton.mp3"
 define audio.explosion = "audio/explosion.mp3"
 define audio.somnium_scan = "audio/somnium_scan.ogg"
 define audio.mental_lock = "audio/mental_lock.ogg"
 define audio.investigation = "audio/investigation.mp3"
 define m = Character("Mora")
 define pancake = Character("Pantechi")
-define spam = Character("SPAMTON")
+define spam = Character("SPAMTON", kind=nvl)
 define nerd = Character("Silvia")
 
 # The game starts here.
@@ -37,7 +39,7 @@ label start:
     #$ renpy.pause(6, hard=True)
     play music investigation
     scene somnium
-    with Dissolve(1.0)
+    with Dissolve(1.5)
 
     show Mora naix
 
@@ -97,7 +99,7 @@ label start:
     m "¡Vamos a ello!"
 
     "Mora avanza un poco hasta que se encuentra con 4 objetos."
-label espada:
+label timies1:
         
     menu:
         "Espada legendaria":
@@ -110,14 +112,26 @@ label espada:
                     nerd "Rebellion técnicamente se la dan a Dante, pero no era suya, era de su padre Sparda, que se la dió cómo recuerdo. Aunque ya no importa porque en Devil May Cry 5..."
                     m "..."
                     m "Ugh..."
-                    jump espada
+                    jump timies1
                 "Alzar":
                     m "¡DEVIL TRIGGER, ACTIVATE!"
                     play sound explosion
                     with flash
-                
+                    $ renpy.quit()
         "Contenedor de basura":
-            "b"
+            play music spamton
+            spam "HEY EVERY !! IT'S ME!!! EV3RY BUDDY 'S FAVORITE [[Number 1 Rated Salesman1997]] SPAMT SPAMTON G. SPAMTON!! WOAH!! IF IT ISN'T A... LIGHT nER! HEY-HE Y HEY!!! LOOKS LIKE YOU'RE{nw}" 
+            spam "[[All Alone On A Late Night?]] ALL YOUR FRIENDS, [[Abandoned you for the slime]] YOU ARE? SALES, GONE DOWN THE [[Drain]] [[Drain]]?? LIVING IN A GODDAMN GARBAGE CAN???{nw}" 
+            spam "WELL HAVE I GOT A [[Specil Deal]] FOR LONELY [[Hearts]] LIKE YOU!! IF YOU'VE [[Lost Control Of Your Life]] THEN YOU JUST GOTTA GRAB IT BY THE [[Silly Strings]] WHY BE THE [[Little Sponge]]{nw}" 
+            spam "WHO HATES ITS [[$4.99]] LIFE WHEN YOU CAN BE A [[BIG SHOT!!!]] [[BIG SHOT!!!!]] [[BIG SHOT!!!!!]] THAT'S RIGHT!! NOW'S YOUR CHANCE TO BE A [[BIG SHOT]]!! AND I HAVE JUST. THE THING. YOU NEED.{nw}" 
+            spam "THAT'S [[Hyperlink Blocked]] YOU WANT IT. YOU WANT [[Hyperlink Blocked]] DON'T YOU. WELL HAVE I GOT A DEAL FOR YOU!! ALL YOU HAVE TO DO IS SHOW ME. YOUR [[HeartShapedObject]].{nw}" 
+            spam "YOU'RE LIGHT neR< AREN'T YOU? YOUVE GOT THE [[LIGHT.]] WHY DON'T YOU [[Show it off?]]"
+            nvl clear
+            stop music
+            show mora spamton
+            m ":o"
+            play music investigation
+            jump timies1
         "Teléfono Móvil":
             "c"
         "Interactuable 4":
