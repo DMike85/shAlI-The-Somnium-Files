@@ -49,6 +49,8 @@ label start:
 
     m "Démonos prisa"
 
+    m "SOMNIUM SCAN ACTIVATE!"
+
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
     e "Fuck off"
