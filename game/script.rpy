@@ -64,30 +64,31 @@ label start:
     m "SOMNIUM SCAN ACTIVATE!"
 
     hide Mora naix
+    window hide
     pause(1.0)
 
     play sound mental_lock
     show movil
 
-    pause(1.0)
+    pause(3.0)
 
     hide movil
     play sound mental_lock
     show figura
 
-    pause(1.0)
+    pause(3.0)
 
     hide figura
     play sound mental_lock
     show polea
 
-    pause(1.0)
+    pause(3.0)
 
     hide polea
     play sound mental_lock
     show bolita
 
-    pause(1.0)
+    pause(3.0)
 
     m "Allé voy"
     # This ends the game.
