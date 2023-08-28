@@ -133,16 +133,16 @@ label timies1:
             play music investigation
             jump timies1
         "Teléfono Móvil":
-            m "Es un smartphone, parece que está apagado" 
+            m "Es un smartphone, parece que está apagado." 
             menu:
                 "Lanzarlo contra la pared":
                     m "Si creéis que la violencia es la solución a todos los problemas..."
                     m "No voy a cuestionaros."
                     m "Preparaos para presenciar mis dotes profesionales de lanzamiento."
                     m "¡HYYAAA!"
-                    "Mora lanza el móvil contra la pred con una fuerza sobrehumana."
-                    "Lo hace tan fuerte que la pared se agrieta"
-                    "El móvil permanece ileso"
+                    "Mora lanza el móvil contra la pared con una fuerza sobrehumana."
+                    "Lo hace tan fuerte que la pared se agrieta."
+                    "El móvil permanece ileso."
                     m "..."
                     m "Vaya, debe de ser un No-kian si ha conseguido agrietar la pared así..."
                     m "Huh... espero que esto no tenga ningún impacto negativo para la cognición de Shali..."
@@ -155,7 +155,7 @@ label timies1:
                     m "(¿Acaso ha habido alguna vez un cargador y un enchufe juntos en un somnium?)"
                     jump timies1
                 "Encenderlo":
-                    "Mora mantiene pulsado el botón de encendido y la pantalla se ilumina"
+                    "Mora mantiene pulsado el botón de encendido y la pantalla se ilumina."
                     m "¡Oh! Se ha encendido... pensé que no tendría batería... ¿Quién pensaría que la opción más obvia sería la correcta? Jeje."
                     m "¿No tiene contraseña? Con lo paranoica que es la gente hoy en día, pensaría que la gente no dejaría su información tan desprotegida."
                     m "Veamos a ver si hay algo de valor..."
@@ -169,10 +169,46 @@ label timies1:
                     m "¿Es posible que el asesino estuviera en la misma habitación que la víctima en el momento de la publicación?"
                     m "Pero...no había signos de que más de una persona haya estando en la casa..."
                     m "Mmm..."
-                    m "Agentes, sigamos investigando, quizás encontremos más pistas"
-                "Interactuable 4":
-                    "d"
-    
+                    m "Agentes, sigamos investigando, quizás encontremos más pistas."
+        "Interactuable 4":
+            "d"
+    "Mora continúa moviéndose por el Somnium mediante vuestras indicaciones y tras poco tiempo se encuentra con más objetos."
+    menu:
+        "Interactuable 1":
+            m "Ligma"
+        "Figura misteriosa":
+            m "balls"
+        "Interactuable 3":
+            m "who's Steve Jobs?"
+    "Miráis alrededor de la sala, buscando más objetos, cuando de la nada, estos aparecen ante vosotros."
+    menu:
+        "Interactuable 1":
+            m "Crotolamo"
+        "Puerta":
+            m "Padalustro"
+        "Pankechi":
+            m "Permatrago"
+        "Interactuable 4":
+            m "Trujo"
+    "Mora y los demás os desplazáis hacia la última parte de la habitación donde encontráis los siguientes objetos."
+    menu:
+        "Interactuable 1":
+            m "jaja"
+        "Interactuable 2":
+            m "jiji"
+        "Figura hecha bolita agarrándose la cabeza":
+            m "juju"
+    m "Mierda, no nos queda tiempo ¡Tenemos que salir! ¡Tendréis que averiguar su identidad vosotros!"
+    m "..."
+    m "(Por mucho que me joda...)"
+    stop music
+    window hide
+    scene black
+    with Dissolve(1.0)
+    pause(3.0)
+    "Agentes, debereis repasar la información que se os ha otorgado y averiguar quién es esa figura amenazante."
+    "¿Quién será? ¿Acaso podéis fiaros los unos de los otros?"
+    "Sea cómo sea, deberéis llevarlo ante la justicia... Hacedlo por la agente Shali."
     # This ends the game.
 
     return
