@@ -102,9 +102,9 @@ label start:
             "Parece una espada, está muy decorada"
             menu optional_name:
                 "Investigar":
-                    #block of code to run
+                    "a" #block of code to run
                 "Alzar":
-                    #block of code to run
+                    "b" #block of code to run
                 
         "Contenedor de basura":
             "b"
