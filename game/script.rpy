@@ -34,7 +34,7 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
     play movie "video/somn_intro.mpeg"
-    $ renpy.pause(6, hard=True)
+    #$ renpy.pause(6, hard=True)
     play music investigation
     scene somnium
     with Dissolve(1.0)
@@ -66,8 +66,7 @@ label start:
     m "Démonos prisa."
 
     play sound somnium_scan
-    m "¡SOMNIUM SCAN, ACTIVATE!{p=6.0} {nw}"
-
+    m "SOMNIUM SCAN ACTIVATE!{p=11.0} {nw}" 
     hide Mora naix
     window hide
     pause(1.0)
