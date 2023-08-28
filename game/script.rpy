@@ -4,7 +4,7 @@
 # name of the character.
 
 define e = Character("Eileen")
-
+define ball_Mora = Character("Mora")
 
 # The game starts here.
 
@@ -29,6 +29,10 @@ label start:
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
     e "Fuck off"
+
+    show Mora happy
+
+    ball_Mora "Did you know i'm circumcised?"
 
     # This ends the game.
 
