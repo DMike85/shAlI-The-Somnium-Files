@@ -1,9 +1,11 @@
 ﻿# The script of the game goes in this file.
 
+init:
+    image black = "#000000"
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
 define m = Character("Mora")
 define pancake = Character("Pantechi")
 define spam = Character("SPAMTON")
@@ -17,17 +19,20 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg black
+    scene black
+    with dissolve(1.0)
 
+    pause(0.5)
     "Recordad Agentes, sólo os podéis quedar en Somnium por 6 minutos"
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    scene bg somnium
+    scene somnium
+    with dissolve(1.0)
 
-    show mora naix
+    show Mora naix
 
     # These display lines of dialogue.
 
@@ -54,10 +59,6 @@ label start:
     m "Démonos prisa"
 
     m "SOMNIUM SCAN ACTIVATE!"
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    e "Fuck off"
 
     show Mora happy
 
