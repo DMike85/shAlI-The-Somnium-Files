@@ -17,11 +17,15 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg somnium
+    scene bg black
+
+    "Recordad Agentes, sólo os podéis quedar en Somnium por 6 minutos"
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
+
+    scene bg somnium
 
     show mora naix
 
