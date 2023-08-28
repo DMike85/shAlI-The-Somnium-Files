@@ -133,7 +133,49 @@ label timies1:
             play music investigation
             jump timies1
         "Teléfono Móvil":
-            "c"
+            m "Es un smartphone, parece que está apagado" 
+                menu:
+                    "Lanzarlo contra la pared":
+                        m "Si creéis que la violencia es la solución a todos los problemas..."
+                        m "No voy a cuestionaros."
+                        m "Preparaos para presenciar mis dotes profesionales de lanzamiento."
+                        m "¡HYYAAA!"
+                        "Mora lanza el móvil contra la pred con una fuerza sobrehumana."
+                        "Lo hace tan fuerte que la pared se agrieta"
+                        "El móvil permanece ileso"
+                        m "..."
+                        m "Vaya, debe de ser un No-kian si ha conseguido agrietar la pared así..."
+                        m "Huh... espero que esto no tenga ningún impacto negativo para la cognición de Shali..."
+                        jump timies1
+                    "Cargarlo":
+                        "Mora mira alrededor en buscar de un cargador y un enchufe. No parece haber nada en los alrededores que sea remotamente similar."
+                        m "Sería una buena idea..."
+                        m "Si no fuera porque no hay absolutamente nada con qué hacerlo..."
+                        m "..."
+                        m "(¿Acaso ha habido alguna vez un cargador y un enchufe juntos en un somnium?)"
+                        jump timies1
+                    "Encenderlo"
+                        "Mora mantiene pulsado el botón de encendido y la pantalla se ilumina"
+                        m "¡Oh! Se ha encendido... pensé que no tendría batería... ¿Quién pensaría que la opción más obvia sería la correcta? Jeje."
+                        m "¿No tiene contraseña? Con lo paranoica que es la gente hoy en día, pensaría que la gente no dejaría su información tan desprotegida."
+                        m "Veamos a ver si hay algo de valor..."
+                        m "..."
+                        m "Qué raro...solo hay una app. TO-Witter - Bueno, Z..."
+                        m "Este Jen Follet, desde que creó las Trollface Coins sólo toma malas decisiones."
+                pause(1.0)
+                show image miguel_toweet
+                pause(1.0)
+                        m "La última actividad digital de la víctima es un tweet que habla sobre un videojuego."
+                        m "Parece que no era de su agrado"
+                hide image miguel_toweet
+                show Mora
+                        m "Mmm...es bastante curioso que la diferencia de tiempo entre la publicación de este toweet y la hora de la muerte sea tan pequeña..."
+                        m "¿Es posible que el asesino estuviera en la misma habitación que la víctima en el momento de la publicación?"
+                        m "Pero...no había signos de que más de una persona haya estando en la casa..."
+                        m "Mmm..."
+                        m "Agentes, sigamos investigando, quizás encontremos más pistas"
+
+
         "Interactuable 4":
             "d"
     
