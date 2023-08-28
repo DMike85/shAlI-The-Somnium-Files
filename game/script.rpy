@@ -2,10 +2,9 @@
 
 init:
     image black = "#000000"
-
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-
+define audio.investigation = "audio/investigation.mp3"
 define m = Character("Mora")
 define pancake = Character("Pantechi")
 define spam = Character("SPAMTON")
@@ -14,6 +13,8 @@ define nerd = Character("Silvia")
 # The game starts here.
 
 label start:
+
+    stop music fadeout 0.5
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -29,6 +30,7 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
+    play music investigation
     scene somnium
     with Dissolve(1.0)
 
