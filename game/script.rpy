@@ -4,7 +4,10 @@
 # name of the character.
 
 define e = Character("Eileen")
-define ball_Mora = Character("Mora")
+define m = Character("Mora")
+define pancake = Character("Pantechi")
+define spam = Character("SPAMTON")
+define nerd = Character("Silvia")
 
 # The game starts here.
 
@@ -32,7 +35,7 @@ label start:
 
     show Mora happy
 
-    ball_Mora "Did you know i'm circumcised?"
+    m "Did you know i'm circumcised?"
 
     # This ends the game.
 
