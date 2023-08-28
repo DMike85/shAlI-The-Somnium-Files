@@ -4,6 +4,7 @@ init:
     image black = "#000000"
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+define audio.somnium_scan = "audio/somnium_scan.ogg"
 define audio.mental_lock = "audio/mental_lock.ogg"
 define audio.investigation = "audio/investigation.mp3"
 define m = Character("Mora")
@@ -61,7 +62,8 @@ label start:
 
     m "Démonos prisa"
 
-    m "SOMNIUM SCAN ACTIVATE!"
+    play sound somnium_scan
+    m "SOMNIUM SCAN ACTIVATE!{p=6.0} {nw}"
 
     hide Mora naix
     window hide
