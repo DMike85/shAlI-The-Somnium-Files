@@ -17,17 +17,37 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene bg somnium
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    show mora naix
 
     # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
+    m "¿Eh? ¿por qué estoy haciendo esto?"
+
+    m "..."
+
+    m "Siento que he visto este símbolo en algún lado..."
+
+    m "En fin, eso no es importante ahora."
+
+    "Junto a Mora os dedicáis a observar detenidamente la habitación"
+
+    m "Esto tiene que ser un error... No puede ser el Somnium de Shali."
+
+    m "Es...muy...¿blanco?"
+
+    m "Algo me dice que no debería verse así..."
+
+    m "..."
+
+    m "No me gusta la sensación que transmite este sitio... Cuanto antes averigüemos qué ha ocurrido,mejor."
+
+    m "Démonos prisa"
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
