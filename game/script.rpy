@@ -23,7 +23,7 @@ label start:
     scene black
     with Dissolve(1.0)
 
-    pause(0.5)
+    pause(5.0)
     "Recordad Agentes, sólo os podéis quedar en Somnium por 6 minutos"
 
     # This shows a character sprite. A placeholder is used, but you can
