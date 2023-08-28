@@ -26,7 +26,7 @@ label start:
     with Dissolve(1.0)
 
     pause(5.0)
-    "Recordad Agentes, sólo os podéis quedar en Somnium por 6 minutos"
+    "Recordad Agentes, sólo os podéis quedar en Somnium por 6 minutos."
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -40,7 +40,7 @@ label start:
 
     # These display lines of dialogue.
 
-    m "¿Eh? ¿por qué estoy haciendo esto?"
+    m "¿Eh? ¿Por qué estoy haciendo esto?"
 
     m "..."
 
@@ -48,22 +48,22 @@ label start:
 
     m "En fin, eso no es importante ahora."
 
-    "Junto a Mora os dedicáis a observar detenidamente la habitación"
+    "Junto a Mora os dedicáis a observar detenidamente la habitación."
 
     m "Esto tiene que ser un error... No puede ser el Somnium de Shali."
 
-    m "Es...muy...¿blanco?"
+    m "Es...muy...¿Blanco?"
 
     m "Algo me dice que no debería verse así..."
 
     m "..."
 
-    m "No me gusta la sensación que transmite este sitio... Cuanto antes averigüemos qué ha ocurrido,mejor."
+    m "No me gusta la sensación que transmite este sitio... Cuanto antes averigüemos qué ha ocurrido, mejor."
 
-    m "Démonos prisa"
+    m "Démonos prisa."
 
     play sound somnium_scan
-    m "SOMNIUM SCAN ACTIVATE!{p=6.0} {nw}"
+    m "¡SOMNIUM SCAN, ACTIVATE!{p=6.0} {nw}"
 
     hide Mora naix
     window hide
@@ -92,7 +92,26 @@ label start:
 
     pause(3.0)
 
-    m "Allé voy"
+    m "¡Vamos a ello!"
+
+    "Mora avanza un poco hasta que se encuentra con 4 objetos."
+
+    menu optional_name:
+        "Espada legendaria":
+            "Parece una espada, está muy decorada"
+            menu optional_name:
+                "Investigar":
+                    #block of code to run
+                "Alzar":
+                    #block of code to run
+                
+        "Contenedor de basura":
+            "b"
+        "Teléfono Móvil":
+            "c"
+        "Interactuable 4":
+            "d"
+    
     # This ends the game.
 
     return
