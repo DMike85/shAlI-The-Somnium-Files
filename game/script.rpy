@@ -97,7 +97,8 @@ label start:
     m "¡Vamos a ello!"
 
     "Mora avanza un poco hasta que se encuentra con 4 objetos."
-
+label espada:
+        
     menu:
         "Espada legendaria":
             m "Parece una espada, está muy decorada."
@@ -109,6 +110,7 @@ label start:
                     nerd "Rebellion técnicamente se la dan a Dante, pero no era suya, era de su padre Sparda, que se la dió cómo recuerdo. Aunque ya no importa porque en Devil May Cry 5..."
                     m "..."
                     m "Ugh..."
+                    jump espada
                 "Alzar":
                     m "¡DEVIL TRIGGER, ACTIVATE!"
                     play sound explosion
