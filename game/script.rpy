@@ -42,15 +42,6 @@ label start:
 
     m "..."
 
-    menu nombre_opcional:
-        "Si pongo esto aqui está el diálogo a la vez que la decisión"
-        "Móvil":
-            "skibidi um da da"
-        "Contenedor de basura":
-            "aver maria"
-        "Rebellion":
-            "aa"
-
     m "Siento que he visto este símbolo en algún lado..."
 
     m "En fin, eso no es importante ahora."
