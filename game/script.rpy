@@ -31,7 +31,8 @@ label start:
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
-
+    play movie "video/somn_intro.mpeg"
+    $ renpy.pause(6, hard=True)
     play music investigation
     scene somnium
     with Dissolve(1.0)
