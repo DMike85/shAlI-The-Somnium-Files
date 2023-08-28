@@ -4,6 +4,7 @@ init:
     image black = "#000000"
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+define audio.mental_lock = "audio/mental_lock.ogg"
 define audio.investigation = "audio/investigation.mp3"
 define m = Character("Mora")
 define pancake = Character("Pantechi")
@@ -62,10 +63,33 @@ label start:
 
     m "SOMNIUM SCAN ACTIVATE!"
 
-    show Mora happy
+    hide Mora naix
+    pause(1.0)
 
-    m "Did you know i'm circumcised?"
+    play sound mental_lock
+    show movil
 
+    pause(1.0)
+
+    hide movil
+    play sound mental_lock
+    show figura
+
+    pause(1.0)
+
+    hide figura
+    play sound mental_lock
+    show polea
+
+    pause(1.0)
+
+    hide polea
+    play sound mental_lock
+    show bolita
+
+    pause(1.0)
+
+    m "Allé voy"
     # This ends the game.
 
     return
