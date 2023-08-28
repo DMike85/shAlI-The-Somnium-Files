@@ -2,8 +2,10 @@
 
 init:
     image black = "#000000"
+    $ flash = Fade(.25, 0, .75, color="#fff")
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+define audio.explosion = "audio/explosion.mp3"
 define audio.somnium_scan = "audio/somnium_scan.ogg"
 define audio.mental_lock = "audio/mental_lock.ogg"
 define audio.investigation = "audio/investigation.mp3"
@@ -99,12 +101,19 @@ label start:
 
     menu:
         "Espada legendaria":
-            "Parece una espada, está muy decorada"
+            m "Parece una espada, está muy decorada."
             menu:
+                m "Parece una espada, está muy decorada.{fast}"
                 "Investigar":
-                    "a" #block of code to run
+                    m "Según internet, esta espada es la Rebellion, la espada principal de Dante, el protagonista de la saga de juegos Devil May Cry ¿Me pregunto qué hará aquí?"
+                    nerd "Uhmmmm, de hecho..."
+                    nerd "Rebellion técnicamente se la dan a Dante, pero no era suya, era de su padre Sparda, que se la dió cómo recuerdo. Aunque ya no importa porque en Devil May Cry 5..."
+                    m "..."
+                    m "Ugh..."
                 "Alzar":
-                    "b" #block of code to run
+                    m "¡DEVIL TRIGGER, ACTIVATE!"
+                    play sound explosion
+                    with flash
                 
         "Contenedor de basura":
             "b"
