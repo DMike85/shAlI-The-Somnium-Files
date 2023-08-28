@@ -42,7 +42,7 @@ label start:
 
     m "..."
 
-    menu nombre opcional:
+    menu nombre_opcional:
         "Si pongo esto aqui está el diálogo a la vez que la decisión"
         "Móvil":
             "skibidi um da da"
