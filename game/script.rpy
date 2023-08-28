@@ -20,7 +20,7 @@ label start:
     # images directory to show it.
 
     scene black
-    with dissolve(1.0)
+    with Dissolve(1.0)
 
     pause(0.5)
     "Recordad Agentes, sólo os podéis quedar en Somnium por 6 minutos"
@@ -30,7 +30,7 @@ label start:
     # directory.
 
     scene somnium
-    with dissolve(1.0)
+    with Dissolve(1.0)
 
     show Mora naix
 
