@@ -15,7 +15,7 @@ define audio.mental_lock = "audio/mental_lock.ogg"
 define audio.investigation = "audio/investigation.mp3"
 define audio.psync_init = "audio/psync_init.mp3"
 define m = Character("Mora")
-define pancake = Character("Pantechi")
+define pancake = Character("Pankechi")
 define spam = Character("SPAMTON", kind=nvl)
 define nerd = Character("Silvia")
 
@@ -276,25 +276,25 @@ label timies3:
             menu:
                 "Darle tortitas":
                     "Mora obtiene unas tortitas y se las ofrece"
-                    "Pantechi las coloca en su cabeza mientras se aleja"
+                    "Pankechi las coloca en su cabeza mientras se aleja"
                     "Crees escucharle decir..."
                     #delicious pancakes.ogg
                     "Delicious pancakes"
                     m "... ¿Creo que le gustan las tortitas?"
                     $ pankechi = True
                     jump timies3
-                "Oh dios mío, Pantechi del famoso videojuego People 5":
-                    "Al momento de decir esto, Pantechi mira a Mora y comienza a gritar:"
+                "Oh dios mío, Pankechi del famoso videojuego People 5":
+                    "Al momento de decir esto, Pankechi mira a Mora y comienza a gritar:"
                     pancake "Ueghhh.. (o^▽^o) i'm getting a wawm tingwy f-feewing fwom all this power!"
                     m "... ¿Qwé? O_O"
-                    "Justo después de decir eso, Pantechi desaparece espontáneamente y no vuelve a aparecer."
+                    "Justo después de decir eso, Pankechi desaparece espontáneamente y no vuelve a aparecer."
                     $ pankechi = True
                     jump timies3
                 "Disparar en la cabeza":
                     "Mora saca un arma que aparece de Dios sabe dónde"
                     m "¡Persona!"
                     "Mora aprieta el gatillo y le dispara"
-                    "Pantechi se muere"
+                    "Pankechi se muere"
                     m "..."
                     m "Ups, creo que ese era del People 3"
                     $ pankechi = True
