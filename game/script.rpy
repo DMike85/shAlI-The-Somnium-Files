@@ -34,7 +34,11 @@ init:
     $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
     default puerro = False
+    default senior = False
+    default yeet = False
+    default die = False
 
+    define audio.glass = "audio/window_break.ogg"
     define audio.miku = "audio/miku.ogg"
     define audio.footsteps = "audio/footsteps.mp3"
     define audio.delicious_pancakes = "audio/delicious_pancakes.ogg"
@@ -373,6 +377,7 @@ label timies2:
                     who "{font=font/NikkyouSans-mLKax.ttf}眼へ久江田年にであしゃPodría ser divertido...パたぽのSolo...場ぞおかめたるぇ多M4t4r..."
                     play sound noise
                     who "{font=font/NikkyouSans-mLKax.ttf}霧切霧切me haráぼるまらしすたsentir千尋藤崎vivaダンガンロンパ絵運ヴぃでおじゅえご" 
+                    stop sound
                     m "..."
                     m "¿Qué me ha pasado?... En cuanto me habéis dicho que grite..."
                     m "¡OH! No sé qué habréis visto, pero ¡es probable que tenga relación con lo ocurrido tras que me desactivaran!"
@@ -382,13 +387,73 @@ label timies2:
                     m "Llevaba una bandolera negra...Mmm, no es que sea un detalle muy identificativo... pero puede ayudarnos en algún momento."
                     m "..."
                     m "¡Continuemos! Aún hay mucho que averigüar." 
-        "Interactuable 3":
-            m "who's Steve Jobs?"
+        "Peluche de Calamar Cantante" if not yeet:
+            m "¡Eh! ¡Reconozco a este personaje!"
+            menu:
+                m "¡Eh! ¡Reconozco a este personaje!{fast}"
+                "Investigar":
+                    m "Es un peluche de una de las idosl calamar del famoso juego Squidloon 1."
+                    m "Recuerdo ver a Shali jugar al tercer juego y ver a este personaje en el modo historia."
+                    m "Después de que me contara sobre el lore de los juegos yo también me interesé."
+                    jump timies2
+                "Abrazar":
+                    "Mora agarra el peluche y lo abraza."
+                    "..."
+                    "Lo abraza durante un buen rato."
+                    m "Es muy suave..."
+                    m "Sé que estamos en un somnium y que no es real, pero..."
+                    m "...me lo quiero llevar..."
+                    jump timies2
+                "Lanzar":
+                    m "Aw, pero no quiero lanzarla..."
+                    m "..."
+                    m "Bueno...está bien..."
+                    "Mora toma el peluche y lo lanza con todas sus fuerzas."
+                    "Para su mala suerte, lo lanza en el ángulo perfecto para que salga volando por la ventana."
+                    play sound glass
+                    $ yeet = True
+                    m "..."
+                    m "..."
+                    m "No habéis visto nada..."
+                    jump timies2
     "Miráis alrededor de la sala, buscando más objetos, cuando de la nada, estos aparecen ante vosotros."
 label timies3:    
     menu:
-        "Interactuable 1":
-            m "Crotolamo"
+        "Pico pixelado":
+            m "Es una especie de pico...Me recuerda a algo."
+            menu:
+                m "Es una especie de pico...Me recuerda a algo.{fast}"
+                "Investigar":
+                    m "Tras realizar una rápida búsqueda en la web, he descubierto que se trata de un item utilizado en el popular videojuego ShovelForge."
+                    m "Los colores de este pico me hacen recordar a cierta idol/streamer..."
+                    m "Creo que su nombre empezaba con una A..."
+                    jump timies3
+                "N/A" if not senior:
+                    "Aparece un señor muy raro en pantalla ???"
+                    $ senior = True
+                    #señor
+                    m "???"
+                    jump timies3
+                "Coger pico":
+                    "Mora trata de coger el pico numerosas veces, pero falla en todas ellas."
+                    "404 inventory not found"
+                    m "..."
+                    "404 inventory not found"
+                    m "..."
+                    "404 inventory not found"
+                    m "¡ME CAGO EN-! {w=0.3} {nw}"
+                    "404 inventory not found {w=0.25} {nw}"
+                    m "¡DÉJAME {w=0.3} {nw}"
+                    "404 inventory not found {w=0.25} {nw}"
+                    m"COGER {w=0.3} {nw}"
+                    "404 inventory not found {w=0.25} {nw}"
+                    m"EL {w=0.3} {nw}"
+                    "404 inventory not found {w=0.25} {nw}"
+                    m"PICO!"
+                    "404 inventory not found"
+                    m"..."
+                    m"Me rindo."
+                    jump timies3
         "Puerta":
             menu:
                 m "Parece una puerta normal y corriente"
@@ -451,13 +516,40 @@ label timies3:
                     m "Ups, creo que ese era del People 3"
                     $ pankechi = True
                     jump timies3
-        "Interactuable 4":
-            m "Trujo"
+        "Bandera lesbiana":
+            m "Mujeres..."
+            menu:
+                m "Mujeres...{fast}"
+                "Mostras respeto a la bandera":
+                    "Mora hace el gesto de respeto a la bandera sin dudarlo un segundo."
+                    m "¡ADORO MI PAÍS!"
+                    jump timies3
     "Mora y los demás os desplazáis hacia la última parte de la habitación donde encontráis los siguientes objetos."
 label timies4:       
     menu:
-        "Interactuable 1":
-            m "jaja"
+        "CaricaturazAbiertas" if not die:
+            m "No sé qué es eso, pero por alguna extraña razón me provoca violencia."
+            menu:
+                m "No sé qué es eso, pero por alguna extraña razón me provoca violencia.{fast}"
+                "Romper":
+                    "Mora agarra el icono de CaricaturazAbiertas y lo DESTROZA hasta el punto de que apenas quedan restos de este."
+                    $ die = True
+                    m "..."
+                    m "¿?"
+                    m "¿Por qué me miráis cómo si fuera una psicópata?"
+                    jump timies4
+                "Quemar":
+                    "Mora se apresura en tomar un mechero y lo prende fuego de manera casi inmediata."
+                    #no sé si vais a querer poner el video, pero inserte aquí
+                    m "¡ARDE EN LAS PROFUNDIDADES DEL INFIERNO!"
+                    $ die = True
+                    jump timies4
+                "Desintegración molecular":
+                    #inserte música épica
+                    m "¡MUERE!"
+                    #inserte video de explosión nuclear
+                    $ die = True
+                    jump timies4
         "Interactuable 2":
             m "jiji"
         "Figura hecha bolita agarrándose la cabeza":
