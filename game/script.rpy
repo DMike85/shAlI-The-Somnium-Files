@@ -39,6 +39,9 @@ init:
     image bate = "images/bate.png"
     image puerro = "images/puerro.png"
     image movilai = "images/movilai.png"
+    image marie = "images/marie.png"
+    image pico = "images/pico.png"
+    image senior = "images/senior.png"
 
     $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
@@ -68,6 +71,7 @@ init:
     define audio.psync_end = "audio/psync_end.mp3"
     define audio.noise = "audio/white_noise.mp3"
     define audio.metal_pipe = "audio/metal_pipe.mp3"
+    define audio.bitchass = "audio/bitch_ass.ogg"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -110,6 +114,7 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
     scene black
+    stop music
     play sound psync_init
     pause(6)
     scene white
@@ -320,6 +325,7 @@ label timies1:
                         zoom 0.45
                     m "Huh... espero que esto no tenga ningún impacto negativo para la cognición de Shali..."
                     hide mora1
+                    scene somnium with Dissolve(1.0)
                     jump timies1
                 "Cargarlo":
                     "Mora mira alrededor en buscar de un cargador y un enchufe. No parece haber nada en los alrededores que sea remotamente similar."
@@ -340,6 +346,7 @@ label timies1:
                     m "(¿Acaso ha habido alguna vez un cargador y un enchufe juntos en un somnium?)"
                     hide mora1
                     hide movilai with zoomout
+                    scene somnium with Dissolve(1.0)
                     jump timies1
                 "Encenderlo":
                     "Mora mantiene pulsado el botón de encendido y la pantalla se ilumina."
@@ -472,43 +479,35 @@ label timies2:
                             "Tras acabar, el puerro desaparece de sus manos."
                             stop music
                             $ puerro = True
+                            show mora7 at left:
+                                zoom 0.45
                             m "..."
-                            m "¿Qué acaba de pasar?"
-                            play music investigation
-                            jump timies2
-                        "Por favor":
-                            play music miku
-                            "Mora instantáneamente agarra el puerro para bailar al compás de la música"
-                            "Tras acabar, el puerro desaparece de sus manos."
-                            stop music
-                            $ puerro = True
-                            m "..."
+                            hide mora7
+                            show mora11 at left:
+                                zoom 0.45
                             m "¿Qué acaba de pasar?"
                             play music investigation
                             hide mora11
                             jump timies2
-                        "Hazlo":
-                            play music miku
-                            "Mora instantáneamente agarra el puerro para bailar al compás de la música"
-                            "Tras acabar, el puerro desaparece de sus manos."
-                            stop music
-                            $ puerro = True
-                            m "..."
-                            m "¿Qué acaba de pasar?"
-                            play music investigation
-                            jump timies2
                         "Por favor":
                             play music miku
                             "Mora instantáneamente agarra el puerro para bailar al compás de la música"
                             "Tras acabar, el puerro desaparece de sus manos."
                             stop music
                             $ puerro = True
+                            show mora7 at left:
+                                zoom 0.45
                             m "..."
+                            hide mora7
+                            show mora11 at left:
+                                zoom 0.45
                             m "¿Qué acaba de pasar?"
                             play music investigation
+                            hide mora11
                             jump timies2
+
         "Figura misteriosa y amenazante":
-            scene figura
+            scene figura with Dissolve(1.0)
             "Mora se acerca a la figura, cuando de repente, la atrapa e intenta dejarla inconsciente."
             
             menu:
@@ -528,6 +527,7 @@ label timies2:
                         zoom 0.45
                     m "Todos mis años cómo luchadora profesional se han ido por el desagüe..."
                     hide mora11
+                    scene somnium with Dissolve(1.0)
                     jump timies2
                 "¿Quién eres?":
                     show mora8 at left:
@@ -540,6 +540,7 @@ label timies2:
                         zoom 0.45
                     m "Me imaginaba que no iba a ser tan sencillo pero, joder tío, podrías al menos decir algo."
                     hide mora3
+                    scene somnium with Dissolve(1.0)
                     jump timies2
                 "Intentar liberarse":
                     "Mora forcejea con la figura y en el proceso es capaz de fijarse en que la figura lleva una bandolera negra"
@@ -553,6 +554,7 @@ label timies2:
                         zoom 0.45
                     m "No sé quién eres, pero cómo me vuelvas a tocar, te hago ASÍN y te quedas sin riñón."
                     hide mora3
+                    scene somnium with Dissolve(1.0)
                     jump timies2
                 "Gritar":
                     play music spooky
@@ -607,10 +609,14 @@ label timies2:
                     show mora9 at left:
                         zoom 0.45
                     m "¡Continuemos! Aún hay mucho que averigüar."
-                    hide mora9 
+                    hide mora9
+                    scene somnium with Dissolve(1.0) 
         "Peluche de Calamar Cantante" if not yeet:
             show mora9 at left:
                 zoom 0.45
+            show marie at truecenter:
+                        zoom 0.1
+                        ease 0.1 zoom 0.5
             m "¡Eh! ¡Reconozco a este personaje!"
             menu:
                 m "¡Eh! ¡Reconozco a este personaje!{fast}"
@@ -621,12 +627,17 @@ label timies2:
                     m "Es un peluche de una de las idols calamar del famoso juego Squidloon 1."
                     m "Recuerdo ver a Shali jugar al tercer juego y ver a este personaje en el modo historia."
                     m "Después de que me contara sobre el lore de los juegos yo también me interesé."
+                    hide marie with zoomout
                     jump timies2
                 "Abrazar":
                     hide mora9
+                    hide marie with zoomout                    
                     "Mora agarra el peluche y lo abraza."
                     "..."
                     "Lo abraza durante un buen rato."
+                    show marie at truecenter:
+                        zoom 0.1
+                        ease 0.1 zoom 0.5
                     show mora4 at left:
                         zoom 0.45
                     m "Es muy suave..."
@@ -636,6 +647,7 @@ label timies2:
                     m "Sé que estamos en un somnium y que no es real, pero..."
                     m "...me lo quiero llevar..."
                     hide mora11
+                    hide marie with zoomout
                     jump timies2
                 "Lanzar":
                     hide mora9
@@ -648,6 +660,7 @@ label timies2:
                         zoom 0.45
                     m "Bueno...está bien..."
                     hide mora8
+                    hide marie with zoomout
                     "Mora toma el peluche y lo lanza con todas sus fuerzas."
                     "Para su mala suerte, lo lanza en el ángulo perfecto para que salga volando por la ventana."
                     play sound glass
@@ -666,11 +679,16 @@ label timies2:
                     hide mora8
                     jump timies2
     "Miráis alrededor de la sala, buscando más objetos, cuando de la nada, estos aparecen ante vosotros."
-label timies3:    
+label timies3:
+    if senior:
+        play music investigation   
     menu:
         "Pico pixelado":
             show mora1 at left:
                 zoom 0.45
+            show pico at truecenter:
+                        zoom 0.1
+                        ease 0.1 zoom 0.5
             m "Es una especie de pico...Me recuerda a algo."
             menu:
                 m "Es una especie de pico...Me recuerda a algo.{fast}"
@@ -688,15 +706,21 @@ label timies3:
                         zoom 0.45
                     m "Creo que su nombre empezaba con una A..."
                     hide mora4
+                    hide pico with zoomout
                     jump timies3
                 "N/A" if not senior:
-                    "Aparece un señor muy raro en pantalla ???"
+                    hide pico with zoomout
+                    stop music
+                    show senior at truecenter:
+                        zoom 0.1
+                        ease 0.1 zoom 0.5
                     $ senior = True
                     #señor
                     show mora1 at left:
                         zoom 0.45
                     m "???"
                     hide mora1
+                    hide senior with zoomout
                     jump timies3
                 "Coger pico":
                     "Mora trata de coger el pico numerosas veces, pero falla en todas ellas."
@@ -739,6 +763,7 @@ label timies3:
                         zoom 0.45
                     m"..."
                     m"Me rindo."
+                    hide pico
                     hide mora3
                     jump timies3
         "Puerta":
@@ -961,6 +986,7 @@ label timies4:
                     show mora9 at left:
                         zoom 0.45
                     m "Estoy aquí para anunciar que..."
+                    play sound bitchass
                     m "SHADOW THE HEDGEHOG IS A BITCHASS MOTHERFUCK-"
                     hide mora9
                     "..."
