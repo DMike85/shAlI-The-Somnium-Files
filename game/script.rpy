@@ -5,6 +5,7 @@ init:
     image white = "#FFFFFF"
     image somnium = "somnium.jpg"
     $ flash = Fade(.25, 0, .75, color="#fff")
+    default pankechi = False
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define audio.spamton ="audio/Spamton.mp3"
@@ -236,13 +237,68 @@ label timies2:
         "Interactuable 3":
             m "who's Steve Jobs?"
     "Miráis alrededor de la sala, buscando más objetos, cuando de la nada, estos aparecen ante vosotros."
+label timies3:    
     menu:
         "Interactuable 1":
             m "Crotolamo"
         "Puerta":
-            m "Padalustro"
-        "Pankechi":
-            m "Permatrago"
+            menu:
+                "Investigar":
+                    m "Parece que esta puerta está atada a un complejo sistema de poleas..."
+                    m "Hay un ladrillo cómicamente grande, colocado para que al abrir la puerta, este golpee a la persona en la cabeza y lance una cuerda que atrape su torso."
+                    m "Tras esto, parece que el sistema de poleas se encargaría de arrastrar a la víctima, fuera de la ventana hacia ¿una obra?..."
+                    m "Mmmm...la cuerda continua hasta...la viga ligeramente oxidada..."
+                    m "Es la misma que la de la escena del crimen..."
+                    m "..."
+                    m "(Esto debe de ser cómo se produjo el asesinato...)"
+                    m "(...)"
+                    jump timies3
+                "Desarmar":
+                    m "Ummm...dudo mucho que pueda desarmar esto...No hay ninguna herramienta y no conozco cómo o en qué orden se han ido colocando todos los elementos..."
+                    m "No creo que sea la opción correcta."
+                "Abrir":
+                    "Mora abre la puerta"
+                    "Miguel aparece, y todo el sistema de poleas repite el mismo proceso que en la realidad. En cuanto abre la puerta, un ladrillo cómicamente grande le golpea en la cabeza dejándolo K.O"
+                    "De mientras cae al suelo, una cuerda se engancha a su torso, atrapándolo. Las poleas comienzan a moverse y arrastran el cuerpo por el suelo hasta llegar a una ventana."
+                    "La cuerda tira del cuerpo y lo saca de la casa por la ventana para seguir arrastrándolo por la calle hasta la obra más cercana."
+                    "Una vez colocado en posición, sobre este cae una viga, ligeramente oxidada, dejando su cadáver en la misma posición y en las mismas condiciones en las que se había encontra el cuerpo."
+                    m "Shali...¿Cómo sabes...?...No..."
+                    m "¡Esto no tiene sentido! ¡No ha podido ser ella!"
+                    m "Si hubiese sido ella, ¿por qué aquella figura me desactivó y la atacó?"
+                    m "Si bien es cierto que para cuando me pude reiniciar, ya había concluido todo el crimen, no me cuadra que estuviera en su estado atual de shock si ella fuera la asesina."
+                    m "Agentes, ¿vosotros pensáis lo mismo, verdad?"
+                    m "Quizás...simplemente ha estado en la escena del crimen...y ha visto el mecanismo...o puede que el asesino la obligara a mirar de mientras se producía el asesinato..."
+                    m "..."
+                    m "Estoy muy preocupada...todo esto tiene muy mala pinta...Shali... ¿Qué te ha hecho?"
+                    m "Ugh. Tenemos que llegar a la conclusión de esto."
+                    m "Solo nos queda un neurocandado. ¡Podemos hacerlo! ¡Saquemos la verdad a la luz!"
+        "Pankechi" if not pankechi:
+            menu:
+                "Darle tortitas":
+                    "Mora obtiene unas tortitas y se las ofrece"
+                    "Pantechi las coloca en su cabeza mientras se aleja"
+                    "Crees escucharle decir..."
+                    #delicious pancakes.ogg
+                    "Delicious pancakes"
+                    m "... ¿Creo que le gustan las tortitas?"
+                    $ pankechi = True
+                    jump timies3
+                "Oh dios mío, Pantechi del famoso videojuego People 5":
+                    "Al momento de decir esto, Pantechi mira a Mora y comienza a gritar:"
+                    pancake "Ueghhh.. (o^▽^o) i'm getting a wawm tingwy f-feewing fwom all this power!"
+                    m "... ¿Qwé? O_O"
+                    "Justo después de decir eso, Pantechi desaparece espontáneamente y no vuelve a aparecer."
+                    $ pankechi = True
+                    jump timies3
+                "Disparar en la cabeza":
+                    "Mora saca un arma que aparece de Dios sabe dónde"
+                    m "¡Persona!"
+                    "Mora aprieta el gatillo y le dispara"
+                    "Pantechi se muere"
+                    m "..."
+                    m "Ups, creo que ese era del People 3"
+                    $ pankechi = True
+                    jump timies3
         "Interactuable 4":
             m "Trujo"
     "Mora y los demás os desplazáis hacia la última parte de la habitación donde encontráis los siguientes objetos."
