@@ -3,12 +3,26 @@
 init:
     image black = "#000000"
     image white = "#FFFFFF"
+    image red = "#ff0000"
     image somnium = "somnium.jpg"
     
     # Sprites de Mora
-    image mora_naix = "images/mora/Mora 14.png"
+    image mora1 = "images/mora/Mora 1.png"
+    image mora2 = "images/mora/Mora 2.png"
+    image mora3 = "images/mora/Mora 3.png"
+    image mora4 = "images/mora/Mora 4.png"
+    image mora5 = "images/mora/Mora 5.png"
+    image mora6 = "images/mora/Mora 6.png"
+    image mora7 = "images/mora/Mora 7.png"
+    image mora8 = "images/mora/Mora 8.png"
+    image mora9 = "images/mora/Mora 9.png"
+    image mora10 = "images/mora/Mora 10.png"
+    image mora11 = "images/mora/Mora 11.png"
+    image mora12 = "images/mora/Mora 12.png"
+    image mora13 = "images/mora/Mora 13.png"
+    image mora14 = "images/mora/Mora 14.png"
 
-
+    image spamton = "images/spamton.pngj"
     $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
 # Declare characters used by this game. The color argument colorizes the
@@ -28,10 +42,23 @@ define pancake = Character("Pankechi", who_color="#b49247")
 define spam = Character("SPAMTON", who_color="#fffb00", kind=nvl)
 define nerd = Character("Silvia", who_color="#15ff00")
 
+label splashscreen:
+    scene black
+    with Pause(1)
+
+    show text "Estoy hasta los huevos..." with dissolve
+    with Pause(2)
+    show text "presenta..." with dissolve
+    with Pause(2)
+
+    hide text with dissolve
+    with Pause(1)
+    
+    return 
+
 # The game starts here.
 
 label start:
-    show mora_naix
     stop music fadeout 0.5
 
     # Show a background. This uses a placeholder by default, but you can
@@ -54,16 +81,16 @@ label start:
     with Dissolve(2)
     pause(0.5)
     play movie "video/somn_intro.mpeg"
-    pause(1)
     scene black
-    pause(6)
-    #$ renpy.pause(6, hard=True)
+    $ renpy.pause(7, hard=True)
+    
+    
 
     play music investigation
     scene somnium
     with Dissolve(1.5)
 
-    show mora_naix at left, onlayer sprites:
+    show mora1 at left:
         zoom 0.45 
         
 
@@ -74,26 +101,42 @@ label start:
     m "..."
 
     m "Siento que he visto este símbolo en algún lado..."
+    hide mora1
+    show mora8 at left:
+        zoom 0.45
 
     m "En fin, eso no es importante ahora."
 
+    hide mora8
     "Junto a Mora os dedicáis a observar detenidamente la habitación."
+
+    show mora12 at left:
+        zoom 0.45 
 
     m "Esto tiene que ser un error...{w=0.75} No puede ser el Somnium de Shali."
 
     m "Es...{w=0.75} muy... {w=0.75}¿Blanco?"
+    hide mora12
+    show mora11 at left:
+        zoom 0.45
 
     m "Algo me dice que no debería verse así..."
 
     m "..."
 
     m "No me gusta la sensación que transmite este sitio...{w=0.75} Cuanto antes averigüemos qué ha ocurrido, mejor."
+    hide mora11
+    show mora8 at left:
+        zoom 0.45
 
     m "Démonos prisa."
+    hide mora8
+    show mora9 at left:
+        zoom 0.45
 
     play sound somnium_scan
     m "SOMNIUM SCAN ACTIVATE!{p=11.0} {nw}" #Es bastante chufa, pero me ha dado dolores de cabeza hacer esto
-    hide Mora naix
+    hide mora9
     window hide
     pause(1.0)
 
@@ -119,36 +162,70 @@ label start:
     show bolita
 
     pause(3.0)
-
+    hide bolita
+    show mora9 at left:
+        zoom 0.45
     m "¡Vamos a ello!"
+    hide mora9
 
     "Mora avanza un poco hasta que se encuentra con 4 objetos."
 label timies1:
         
     menu:
         "Espada legendaria":
+            show mora5 at left:
+                    zoom 0.45
             m "Parece una espada, está muy decorada."
             menu:
                 m "Parece una espada, está muy decorada.{fast}"
                 "Investigar":
+                    hide mora5
+                    show mora4 at left:
+                        zoom 0.45
                     m "Según internet, esta espada es la Rebellion, la espada principal de Dante, el protagonista de la saga de juegos Devil May Cry ¿Me pregunto qué hará aquí?"
+                    
+                    hide mora4
+                    show nerd at left:
+                        zoom 0.45
                     nerd "Uhmmmm, de hecho..."
                     nerd "Rebellion técnicamente se la dan a Dante, pero no era suya, era de su padre Sparda, que se la dió cómo recuerdo. Aunque ya no importa porque en Devil May Cry 5..."
+                    hide nerd
+                    show mora7 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora7
+                    show mora1 at left:
+                        zoom 0.45
                     m "Ugh..."
+                    hide mora1
                     jump timies1
                 "Alzar":
+                    hide mora5
+                    show mora9 at left:
+                        zoom 0.45
                     m "¡DEVIL TRIGGER, ACTIVATE!"
                     play sound explosion
                     with flash
                     $ renpy.quit()
                 "Seppuku":
+                    hide mora5
+                    show mora11 at left:
                     m "Bueno...si así lo habéis decidido... ¡Allá voy!"
+                    hide mora11
+                    stop music
                     "Mora se hace el seppuku y cae al suelo"
+                    window hide dissolve
+                    scene red with Dissolve(0.75)
+                    play movie "video/somn_fail.mpeg"
+                    scene black
+                    $ renpy.pause(6, hard=True)
+                    pause(2)
                     #Aquí va la animación de fallar en el somnium        
             return
         "Contenedor de basura":
+            # Añadir doblaje de este dialogo de spamton
             play music spamton
+            show spamton at left
             spam "HEY EVERY !! IT'S ME!!! EV3RY BUDDY 'S FAVORITE [[Number 1 Rated Salesman1997]] SPAMT SPAMTON G. SPAMTON!! WOAH!! IF IT ISN'T A... LIGHT nER! HEY-HE Y HEY!!! LOOKS LIKE YOU'RE{nw}" 
             spam "[[All Alone On A Late Night?]] ALL YOUR FRIENDS, [[Abandoned you for the slime]] YOU ARE? SALES, GONE DOWN THE [[Drain]] [[Drain]]?? LIVING IN A GODDAMN GARBAGE CAN???{nw}" 
             spam "WELL HAVE I GOT A [[Specil Deal]] FOR LONELY [[Hearts]] LIKE YOU!! IF YOU'VE [[Lost Control Of Your Life]] THEN YOU JUST GOTTA GRAB IT BY THE [[Silly Strings]] WHY BE THE [[Little Sponge]]{nw}" 
@@ -157,8 +234,11 @@ label timies1:
             spam "YOU'RE LIGHT neR< AREN'T YOU? YOUVE GOT THE [[LIGHT.]] WHY DON'T YOU [[Show it off?]]"
             nvl clear
             stop music
-            show mora spamton
-            m ":o"
+            hide spamton
+            show mora6 at left:
+                zoom 0.45
+            m "..."
+            hide mora6
             play music investigation
             jump timies1
         "Teléfono Móvil":
@@ -192,6 +272,7 @@ label timies1:
                     m "Qué raro...solo hay una app. TO-Witter - Bueno, Z..."
                     m "Este Jen Follet, desde que creó las Trollface Coins sólo toma malas decisiones."
                     #Aquí va la imagen del toweet, ya se peleará con ello la Silvia del futuro.
+                    #Se puede poner con la AI vision que muestre la imagen del toweet
                     m "La última actividad digital de la víctima es un tweet que habla sobre un videojuego."
                     m "Parece que no era de su agrado."
                     m "Mmm...es bastante curioso que la diferencia de tiempo entre la publicación de este toweet y la hora de la muerte sea tan pequeña..."
@@ -199,8 +280,15 @@ label timies1:
                     m "Pero...no había signos de que más de una persona haya estando en la casa..."
                     m "Mmm..."
                     m "Agentes, sigamos investigando, quizás encontremos más pistas."
-        "Interactuable 4":
-            "d"
+        "Bate de béisbol":
+            menu:
+                "Investigar":
+                    m "Es un bate de béisbol un tanto curioso, su diseño es muy único."
+                    m "Tras revisar los archivos de mi memoria, he descubierto que se trata del bate de Kiana Kaslana, la protagonista de Honkai Impact 3rd."
+                    m "Es un juego que le encanta a Shali."
+                "Colocar sobre los hombros":
+                    "Mora coloca el bate sobre sus hombros. Instantáneamente se siente mucho más fuerte y lesbiana por cierto personaje de pelo morado."
+                    m "De repento siento unas ganas enormes de golepar a un tal Kevin Kaslana"
     "Mora continúa moviéndose por el Somnium mediante vuestras indicaciones y tras poco tiempo se encuentra con más objetos."
 label timies2:
     menu:
