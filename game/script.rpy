@@ -848,33 +848,68 @@ label timies4:
                     play music investigation
                     jump timies4
         "Esmeralda del caos" if not emerald:
+            show mora4 at left:
+                zoom 0.45
             menu:
                 m "Es una joya de un color verdoso"
                 "Comer":
+                    hide mora4
                     "De repente a Mora le parece bastante apetecible la joya y se la come..."
                     "...Simplemente se la come..."
+                    show mora1 at left:
+                        zoom 0.45
                     m "Mmmm..."
+                    hide mora1
+                    show mora4 at left:
+                        zoom 0.45
                     m "Crunchy."
                     $ emerald = True
+                    hide mora4
                     jump timies4
                 "Hacer un anuncio":
+                    hide mora4
                     "Mora mira su mano y de repente encuentra un micrófono, al parecer también tiene una cámara apuntándola."
                     "Está en directo por alguna razón..."
+                    show mora1 at left:
+                        zoom 0.45
                     m "Um..."
+                    hide mora1
+                    show mora8 at left:
+                        zoom 0.45
                     m "¡Ahem!"
+                    hide mora8
+                    show mora9 at left:
+                        zoom 0.45
                     m "Estoy aquí para anunciar que..."
                     m "SHADOW THE HEDGEHOG IS A BITCHASS MOTHERFUCKER-"
+                    hide mora9
                     "..."
                     "Mientras Mora da su anuncio un murciélago entra en la habitación y la roba la joya."
                     $ emerald = True
+                    show mora7 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora7
+                    show mora11 at left:
+                        zoom 0.45
                     m "Esto es un crimen, de murciélago a murciélago..."
+                    hide mora11
+                    show mora1 at left:
+                        zoom 0.45
                     m "No sé cómo sentirme al respecto."
+                    hide mora1
                     jump timies4
                 "¡CHAOS CONTROL!":
+                    hide mora4
                     "Mora tiene ansias de poder y decide tocar la joya."
+                    show mora1 at left:
+                        zoom 0.45
                     m "No sé por qué, pero siento que tengo que gritarlo..."
+                    hide mora1
+                    show mora9 at left:
+                        zoom 0.45
                     m "¡CHAOS CONTROL!"
+                    hide mora9
                     stop music
                     "El tiempo se para por unos momentos."
                     "Enhorabuena ¡Has desbloqueado ”Chaos Control”."
@@ -888,41 +923,84 @@ label timies4:
                 "”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?” ”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?”{fast}"
                 "Consolar":
                     "Mora se acerca a la figura y la abraza."
+                    show mora11 at left:
+                        zoom 0.45
                     m "Shhhhh todo está bien..."
                     "La figura no reacciona."
                     m "No parece que le haya ayudado a sentirse mejor..."
+                    hide mora11
                     jump timies4
                 "Felicitar":
                     "Sin pensarlo dos veces Mora aplaude y felicita a la figura."
+                    show mora4 at left:
+                        zoom 0.45
                     m "¡Felicidades!"
+                    hide mora4
+                    show mora11 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora11
+                    show mora8 at left:
+                        zoom 0.45
                     m "¿Por qué he hecho eso? y ¿En que iba a ayudar?"
+                    hide mora8
                     jump timies4
                 "Drogar":
+                    show mora2 at left:
+                        zoom 0.45
                     m "¿Qué? Pero...¡¿Por qué haría algo tan cruel?!"
+                    hide mora2
+                    show mora11 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora11
+                    show mora1 at left:
+                        zoom 0.45
                     menu:
                         m "¿Estáis seguros de que queréis hacer esto?"
                         "No":
+                            hide mora1
+                            show mora11 at left:
+                                zoom 0.45
                             m "Me imaginaba...no siento que sea lo correcto, además me da mucha pena."
+                            hide mora11
+                            show mora4 at left:
+                                zoom 0.45
                             m "Probemos otra cosa."
+                            hide mora4
                             jump timies4
                         "Sí":
+                            hide mora1
+                            show mora11 at left:
+                                zoom 0.45
                             m "Supongo que si me lo pedís vosotros no me queda otra...¿Pero cómo lo hago si no-?"
                             "Al poco de empezar a hablar, en la mano de Mora aparece una aguja con lo que parece algún tipo de sedante en su interior."
                             m "...Supongo que con esto...lo siento mucho..."
+                            hide mora11
                             "Mora entonces agarra a la figura, la cual forcejea en pánico, y le clava la aguja en la espalda. En cuestión de 1 minuto o menos la figura para de forcejear y cae sedada al suelo."
                             "Tras esto, la figura amenazante aparece detrás de Mora, quien instintivamente se aparta, y se acerca a la figura tirada en el suelo."
                             "La figura amenazante procede a decirle en un tono medianamente burlón: ”¿Ahora cómo van a descubrirme si tú has hecho todo? Je." 
                             "Y lo mejor de todo es que no serás capaz de decir palabra sobre ello... Te pasa por arruinar mis otros planes...”"
                             "Tras esto la figura se aleja y en ese proceso Mora y vosotros sois capaces de ver que la figura lleva una bandolera negra y dos pulseras."
+                            show mora8 at left:
+                                zoom 0.45
                             m "...Creo que esto nos deja claro que esa figura es la responsable de todo."
                             m "Lo que quiere decir que la figura del suelo..."
+                            hide mora8
+                            show mora3 at left:
+                                zoom 0.45
                             m "..."
-                            m "Ese bastardo..."   
+                            m "Ese bastardo..."
+                            hide mora3   
+    show mora12 at left:
+        zoom 0.45
     m "Mierda, no nos queda tiempo ¡Tenemos que salir! ¡Tendréis que averiguar su identidad vosotros!"
     m "..."
+    hide mora12
+    show mora11 at left:
+        zoom 0.45
     m "(Por mucho que me joda...)"
+    hide mora11
     stop music
     window hide dissolve
     scene white
