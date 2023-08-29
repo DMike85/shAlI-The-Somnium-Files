@@ -699,7 +699,7 @@ label timies3:
                     show mora4 at left:
                         zoom 0.45
                     m "..."
-                    "404 inventory not found"
+                    "404 inventory not found {w=1.0} {nw}"
                     hide mora4
                     show mora8 at left:
                         zoom 0.45
@@ -946,7 +946,7 @@ label timies4:
                     show mora9 at left:
                         zoom 0.45
                     m "Estoy aquí para anunciar que..."
-                    m "SHADOW THE HEDGEHOG IS A BITCHASS MOTHERFUCKER-"
+                    m "SHADOW THE HEDGEHOG IS A BITCHASS MOTHERFUCK-"
                     hide mora9
                     "..."
                     "Mientras Mora da su anuncio un murciélago entra en la habitación y la roba la joya."
