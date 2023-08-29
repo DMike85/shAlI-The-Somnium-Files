@@ -27,6 +27,7 @@ init:
 
     $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
+    default puerro = False
 
     define audio.footsteps = "audio/footsteps.mp3"
     define audio.delicious_pancakes = "audio/delicious_pancakes.ogg"
@@ -293,14 +294,31 @@ label timies1:
                     m "Es un bate de béisbol un tanto curioso, su diseño es muy único."
                     m "Tras revisar los archivos de mi memoria, he descubierto que se trata del bate de Kiana Kaslana, la protagonista de Honkai Impact 3rd."
                     m "Es un juego que le encanta a Shali."
+                    jump timies1
                 "Colocar sobre los hombros":
                     "Mora coloca el bate sobre sus hombros. Instantáneamente se siente mucho más fuerte y lesbiana por cierto personaje de pelo morado."
                     m "De repento siento unas ganas enormes de golepar a un tal Kevin Kaslana"
+                    jump timies1
     "Mora continúa moviéndose por el Somnium mediante vuestras indicaciones y tras poco tiempo se encuentra con más objetos."
 label timies2:
     menu:
-        "Interactuable 1":
-            m "Ligma"
+        "Puerro" if not puerro:
+            menu:
+                "Investigar":
+                    m "..."
+                    m "Es un puerro, no sé qué más queréis que os diga sobre él"
+                    jump timies2
+                "Bailar":
+                    m "¿Cómo que baile-?"
+                    menu:
+                        "Si":
+                            #inserte levan polka aquí
+                            "Mora instantáneamente agarra el puerro para bailar al compás de la música"
+                            "Tras acabar, el puerro desaparece de sus manos"
+                            $ puerro = True
+                            m "..."
+                            m "¿Qué acaba de pasar?"
+                            jump timies2
         "Figura misteriosa y amenazante":
             "Mora se acerca a la figura, cuando de repente, la atrapa e intenta dejarla inconsciente"
             menu:
@@ -425,11 +443,11 @@ label timies4:
                 "Consolar":
                     "Mora se acerca a la figura y la abraza."
                     m "Shhhhh todo está bien..."
-                    "La figura no reacciona"
+                    "La figura no reacciona."
                     m "No parece que le haya ayudado a sentirse mejor..."
                     jump timies4
                 "Felicitar":
-                    "Sin pensarlo dos veces Mora aplaude y felicita a la figura"
+                    "Sin pensarlo dos veces Mora aplaude y felicita a la figura."
                     m "¡Felicidades!"
                     m "..."
                     m "¿Por qué he hecho eso? y ¿En que iba a ayudar?"
@@ -441,7 +459,7 @@ label timies4:
                         m "¿Estáis seguros de que queréis hacer esto?"
                         "No":
                             m "Me imaginaba...no siento que sea lo correcto, además me da mucha pena."
-                            m "Probemos otra cosa"
+                            m "Probemos otra cosa."
                             jump timies4
                         "Sí":
                             m "Supongo que si me lo pedís vosotros no me queda otra...¿Pero cómo lo hago si no-?"
