@@ -29,9 +29,9 @@ init:
     default pankechi = False
 
     define audio.footsteps = "audio/footsteps.mp3"
-define audio.delicious_pancakes = "audio/delicious_pancakes.ogg"
-define audio.gunshot = "audio/gunshot.mp3"
-define audio.door = "audio/door_opening.mp3"
+    define audio.delicious_pancakes = "audio/delicious_pancakes.ogg"
+    define audio.gunshot = "audio/gunshot.mp3"
+    define audio.door = "audio/door_opening.mp3"
     define audio.spamton ="audio/Spamton.mp3"
     define audio.explosion = "audio/explosion.mp3"
     define audio.somnium_scan = "audio/somnium_scan.ogg"
