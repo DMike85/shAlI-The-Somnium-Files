@@ -40,7 +40,7 @@ init:
     default die = False
     default emerald = False
 
-    default audio.spooky = "audio/spooky.mp3"
+    define audio.spooky = "audio/spooky.mp3"
     define audio.laugh = "audio/girl_laugh.mp3"
     define audio.epic = "audio/soul_of_cinder.ogg"
     define audio.glass = "audio/window_break.ogg"
@@ -328,47 +328,103 @@ label timies1:
                     jump timies1
                 "Encenderlo":
                     "Mora mantiene pulsado el botón de encendido y la pantalla se ilumina."
+                    show mora5 at left:
+                        zoom 0.45
                     m "¡Oh! Se ha encendido... pensé que no tendría batería... ¿Quién pensaría que la opción más obvia sería la correcta? Jeje."
+                    hide mora5
+                    show mora1 at left:
+                        zoom 0.45
                     m "¿No tiene contraseña? Con lo paranoica que es la gente hoy en día, pensaría que la gente no dejaría su información tan desprotegida."
+                    hide mora1
+                    show mora4 at left:
+                        zoom 0.45
                     m "Veamos a ver si hay algo de valor..."
+                    hide mora4
+                    show mora1 at left:
+                        zoom 0.45
                     m "..."
                     m "Qué raro...solo hay una app. TO-Witter - Bueno, Z..."
+                    hide mora1
+                    show mora8 at left:
+                        zoom 0.45
                     m "Este Jen Follet, desde que creó las Trollface Coins sólo toma malas decisiones."
                     show toweet at truecenter:
                         zoom 0.1
                         ease 0.1 zoom 0.5
+                    hide mora8
+                    show mora9 at left:
+                        zoom 0.45
                     m "La última actividad digital de la víctima es un tweet que habla sobre un videojuego."
-                    m "Parece que no era de su agrado."
+                    hide mora9
+                    show mora5 at left:
+                        zoom 0.45
+                    m "Parece que no era de su agrado.... o por lo menos, no parece satisfecho con este..."
+                    hide mora5
+                    show mora1 at left:
+                        zoom 0.45
                     m "Mmm...es bastante curioso que la diferencia de tiempo entre la publicación de este toweet y la hora de la muerte sea tan pequeña..."
+                    hide mora1
+                    show mora9 at left:
+                        zoom 0.45
                     m "¿Es posible que el asesino estuviera en la misma habitación que la víctima en el momento de la publicación?"
+                    hide mora9
+                    show mora11 at left:
+                        zoom 0.45
                     m "Pero...no había signos de que más de una persona haya estado en la casa..."
                     hide toweet with zoomout
+                    hide mora11
+                    show mora1 at left:
+                        zoom 0.45
                     m "Mmm..."
+                    hide mora1
+                    show mora8 at left:
+                        zoom 0.45
                     m "Agentes, sigamos investigando, quizás encontremos más pistas."
+                    hide mora8
         "Bate de béisbol":
+            show mora4 at left:
+                zoom 0.45
             menu:
                 m "Un bate de béisbol"
                 "Investigar":
+                    hide mora4
+                    show mora5 at left:
+                        zoom 0.45
+                    #aqui se pone la imagen del bate de béisbol
                     m "Es un bate de béisbol un tanto curioso, su diseño es muy único."
+                    hide mora5
+                    show mora4 at left:
+                        zoom 0.45
                     m "Tras revisar los archivos de mi memoria, he descubierto que se trata del bate de Kiana Kaslana, la protagonista de Honkai Impact 3rd."
                     m "Es un juego que le encanta a Shali."
+                    hide mora4
                     jump timies1
                 "Colocar sobre los hombros":
                     "Mora coloca el bate sobre sus hombros. Instantáneamente se siente mucho más fuerte y lesbiana por cierto personaje de pelo morado."
+                    hide mora4
+                    show mora8 at left:
+                        zoom 0.45
                     m "De repento siento unas ganas enormes de golepar a un tal Kevin Kaslana"
+                    hide mora8
                     jump timies1
     "Mora continúa moviéndose por el Somnium mediante vuestras indicaciones y tras poco tiempo se encuentra con más objetos."
 label timies2:
     menu:
         "Puerro" if not puerro:
+            show mora1 at left:
+                zoom 0.45
             menu:
                 m "Es... ¿Es eso un puerro?"
                 "Investigar":
                     m "..."
                     m "Es un puerro, no sé qué más queréis que os diga sobre él."
+                    hide mora1
                     jump timies2
                 "Bailar":
+                    show mora1 at left:
+                        zoom 0.45
                     m "¿Cómo que baile-?"
+                    hide mora1
                     menu:
                         "Si":
                             play music miku
@@ -376,43 +432,75 @@ label timies2:
                             "Tras acabar, el puerro desaparece de sus manos."
                             stop music
                             $ puerro = True
+                            show mora7 at left:
+                                zoom 0.45
                             m "..."
+                            hide mora7
+                            show mora11 at left:
+                                zoom 0.45
                             m "¿Qué acaba de pasar?"
                             play music investigation
+                            hide mora11
                             jump timies2
         "Figura misteriosa y amenazante":
             "Mora se acerca a la figura, cuando de repente, la atrapa e intenta dejarla inconsciente."
             menu:
                 "Súplex alemán":
                     "Sin rechistar, Mora intenta hacer un súplex alemán a la figura, fallando en el intento, de tal forma que se hace el súplex a sí misma."
+                    show mora12 at left:
+                        zoom 0.45
                     m "¿Espera qué-? AAAAAAAAAAAAAAAA"
                     m "¡Uf-!"
+                    hide mora12
+                    show mora10 at left:
+                        zoom 0.45
                     m "Auch... ¿Cómo ha-?"
                     m "..."
+                    hide mora10
+                    show mora11 at left:
+                        zoom 0.45
                     m "Todos mis años cómo luchadora profesional se han ido por el desagüe..."
+                    hide mora11
                     jump timies2
                 "¿Quién eres?":
+                    show mora8 at left:
+                        zoom 0.45
                     m "¿Quién eres?"
                     m "..."
                     m "..."
+                    hide mora8
+                    show mora3 at left:
+                        zoom 0.45
                     m "Me imaginaba que no iba a ser tan sencillo pero, joder tío, podrías al menos decir algo."
+                    hide mora3
                     jump timies2
                 "Intentar liberarse":
                     "Mora forcejea con la figura y en el proceso es capaz de fijarse en que la figura lleva una bandolera negra"
                     "Consigue soltarse, pero no parece que nada cambie realmente"
+                    show mora2 at left:
+                        zoom 0.45
                     m "¿QUÉ NARICES? ¿PERO QUÉ TE PASA?"
                     m "UGH"
+                    hide mora2
+                    show mora3 at left:
+                        zoom 0.45
                     m "No sé quién eres, pero cómo me vuelvas a tocar, te hago ASÍN y te quedas sin riñón."
+                    hide mora3
                     jump timies2
                 "Gritar":
                     play music spooky
                     "Antes de poder preguntar nada sobre qué gritar, Mora se queda congelada y habla en esperanto por un momento. Tras esto, la figura desaparece."
                     play sound noise
+                    show mora13 at left:
+                        zoom 0.45
                     who "{font=font/NikkyouSans-mLKax.ttf}じゅんぺい フエゴ縁巫女らぞのNo...サリ地パパ区餌ぼろさSuéltame...おぇおぇぉ祖からこぇす"
                     play sound noise
                     who "{font=font/NikkyouSans-mLKax.ttf}¡PARA! ペルソナ4ダンシングあるにと¡YOぱらぱてぇらっぱNOもんすたはたぬたりVOYしつふぁいたぐらいたふぉろAふぁたもる..."
                     m "..."
                     play sound laugh
+                    hide mora13
+                    show mora14 at left:
+                        zoom 0.45
                     who "Jijiji"
                     stop sound
                     play sound noise
@@ -420,22 +508,49 @@ label timies2:
                     play sound noise
                     who "{font=font/NikkyouSans-mLKax.ttf}霧切霧切me haráぼるまらしすたsentir千尋藤崎vivaダンガンロンパ絵運ヴぃでおじゅえご" 
                     stop sound
+                    hide mora14
+                    show mora12 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora12
+                    show mora11 at left:
+                        zoom 0.45
                     m "¿Qué me ha pasado?... En cuanto me habéis dicho que grite..."
+                    hide mora11
+                    show mora5 at left:
+                        zoom 0.45
                     m "¡OH! No sé qué habréis visto, pero ¡es probable que tenga relación con lo ocurrido tras que me desactivaran!"
+                    hide mora5
+                    show mora8 at left:
+                        zoom 0.45
                     m "...Tiene toda la pinta de que esa figura fue quién lo hizo."
                     m "Y por ende..."
+                    hide mora8
+                    show mora3 at left:
+                        zoom 0.45
                     m "Es muy probable que también sea el asesino y el culpable de que Shali esté así..."
+                    hide mora3
+                    show mora1 at left:
+                        zoom 0.45
                     m "Llevaba una bandolera negra...Mmm, no es que sea un detalle muy identificativo... pero puede ayudarnos en algún momento."
                     stop music
                     m "..."
                     play music investigation
-                    m "¡Continuemos! Aún hay mucho que averigüar." 
+                    hide mora1
+                    show mora9 at left:
+                        zoom 0.45
+                    m "¡Continuemos! Aún hay mucho que averigüar."
+                    hide mora9 
         "Peluche de Calamar Cantante" if not yeet:
+            show mora9 at left:
+                zoom 0.45
             m "¡Eh! ¡Reconozco a este personaje!"
             menu:
                 m "¡Eh! ¡Reconozco a este personaje!{fast}"
                 "Investigar":
+                    hide mora9
+                    show mora4 at left:
+                        zoom 0.45
                     m "Es un peluche de una de las idols calamar del famoso juego Squidloon 1."
                     m "Recuerdo ver a Shali jugar al tercer juego y ver a este personaje en el modo historia."
                     m "Después de que me contara sobre el lore de los juegos yo también me interesé."
@@ -445,32 +560,63 @@ label timies2:
                     "..."
                     "Lo abraza durante un buen rato."
                     m "Es muy suave..."
+                    hide mora4
+                    show mora11 at left:
+                        zoom 0.45
                     m "Sé que estamos en un somnium y que no es real, pero..."
                     m "...me lo quiero llevar..."
+                    hide mora11
                     jump timies2
                 "Lanzar":
+                    show mora11 at left:
+                        zoom 0.45
                     m "Aw, pero no quiero lanzarla..."
                     m "..."
+                    hide mora11
+                    show mora8 at left:
+                        zoom 0.45
                     m "Bueno...está bien..."
+                    hide mora8
                     "Mora toma el peluche y lo lanza con todas sus fuerzas."
                     "Para su mala suerte, lo lanza en el ángulo perfecto para que salga volando por la ventana."
                     play sound glass
                     $ yeet = True
+                    show mora12 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora12
+                    show mora11 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora11
+                    show mora8 at left:
+                        zoom 0.45
                     m "No habéis visto nada..."
+                    hide mora8
                     jump timies2
     "Miráis alrededor de la sala, buscando más objetos, cuando de la nada, estos aparecen ante vosotros."
 label timies3:    
     menu:
         "Pico pixelado":
+            show mora1 at left:
+                zoom 0.45
             m "Es una especie de pico...Me recuerda a algo."
             menu:
                 m "Es una especie de pico...Me recuerda a algo.{fast}"
                 "Investigar":
+                    hide mora1
+                    show mora4 at left:
+                        zoom 0.45
                     m "Tras realizar una rápida búsqueda en la web, he descubierto que se trata de un item utilizado en el popular videojuego ShovelForge."
+                    hide mora4
+                    show mora1 at left:
+                        zoom 0.45
                     m "Los colores de este pico me hacen recordar a cierta idol/streamer..."
+                    hide mora1
+                    show mora4 at left:
+                        zoom 0.45
                     m "Creo que su nombre empezaba con una A..."
+                    hide mora4
                     jump timies3
                 "N/A" if not senior:
                     "Aparece un señor muy raro en pantalla ???"
