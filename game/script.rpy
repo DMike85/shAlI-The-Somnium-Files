@@ -304,7 +304,7 @@ label timies1:
                     m "Parece que no era de su agrado."
                     m "Mmm...es bastante curioso que la diferencia de tiempo entre la publicación de este toweet y la hora de la muerte sea tan pequeña..."
                     m "¿Es posible que el asesino estuviera en la misma habitación que la víctima en el momento de la publicación?"
-                    m "Pero...no había signos de que más de una persona haya estando en la casa..."
+                    m "Pero...no había signos de que más de una persona haya estado en la casa..."
                     m "Mmm..."
                     m "Agentes, sigamos investigando, quizás encontremos más pistas."
         "Bate de béisbol":
@@ -335,7 +335,7 @@ label timies2:
                         "Si":
                             play music miku
                             "Mora instantáneamente agarra el puerro para bailar al compás de la música"
-                            "Tras acabar, el puerro desaparece de sus manos"
+                            "Tras acabar, el puerro desaparece de sus manos."
                             stop music
                             $ puerro = True
                             m "..."
@@ -343,7 +343,7 @@ label timies2:
                             play music investigation
                             jump timies2
         "Figura misteriosa y amenazante":
-            "Mora se acerca a la figura, cuando de repente, la atrapa e intenta dejarla inconsciente"
+            "Mora se acerca a la figura, cuando de repente, la atrapa e intenta dejarla inconsciente."
             menu:
                 "Súplex alemán":
                     "Sin rechistar, Mora intenta hacer un súplex alemán a la figura, fallando en el intento, de tal forma que se hace el súplex a sí misma."
@@ -382,7 +382,7 @@ label timies2:
                     m "..."
                     m "¿Qué me ha pasado?... En cuanto me habéis dicho que grite..."
                     m "¡OH! No sé qué habréis visto, pero ¡es probable que tenga relación con lo ocurrido tras que me desactivaran!"
-                    m "...Tiene toda la pinta de que esa figura fue quién lo hizo"
+                    m "...Tiene toda la pinta de que esa figura fue quién lo hizo."
                     m "Y por ende..."
                     m "Es muy probable que también sea el asesino y el culpable de que Shali esté así..."
                     m "Llevaba una bandolera negra...Mmm, no es que sea un detalle muy identificativo... pero puede ayudarnos en algún momento."
@@ -473,15 +473,16 @@ label timies3:
                     m "No creo que sea la opción correcta."
                 "Abrir":
                     play sound door
-                    "Mora abre la puerta"
+                    "Mora abre la puerta."
                     "Miguel aparece, y todo el sistema de poleas repite el mismo proceso que en la realidad. En cuanto abre la puerta, un ladrillo cómicamente grande le golpea en la cabeza dejándolo K.O"
                     "De mientras cae al suelo, una cuerda se engancha a su torso, atrapándolo. Las poleas comienzan a moverse y arrastran el cuerpo por el suelo hasta llegar a una ventana."
                     "La cuerda tira del cuerpo y lo saca de la casa por la ventana para seguir arrastrándolo por la calle hasta la obra más cercana."
+                    play sound metal_pipe
                     "Una vez colocado en posición, sobre este cae una viga, ligeramente oxidada, dejando su cadáver en la misma posición y en las mismas condiciones en las que se había encontra el cuerpo."
                     m "Shali...¿Cómo sabes...?...No..."
                     m "¡Esto no tiene sentido! ¡No ha podido ser ella!"
-                    m "Si hubiese sido ella, ¿por qué aquella figura me desactivó y la atacó?"
-                    m "Si bien es cierto que para cuando me pude reiniciar, ya había concluido todo el crimen, no me cuadra que estuviera en su estado atual de shock si ella fuera la asesina."
+                    m "Si hubiese sido ella, ¿Por qué aquella figura me desactivó y la atacó?"
+                    m "Si bien es cierto que para cuando me pude reiniciar, ya había concluido todo el crimen, no me cuadra que estuviera en su estado actual de shock si ella fuera la asesina."
                     m "Agentes, ¿vosotros pensáis lo mismo, verdad?"
                     m "Quizás...simplemente ha estado en la escena del crimen...y ha visto el mecanismo...o puede que el asesino la obligara a mirar de mientras se producía el asesinato..."
                     m "..."
@@ -521,7 +522,7 @@ label timies3:
             m "Mujeres..."
             menu:
                 m "Mujeres...{fast}"
-                "Mostras respeto a la bandera":
+                "Muestras respeto a la bandera":
                     "Mora hace el gesto de respeto a la bandera sin dudarlo un segundo."
                     m "¡ADORO MI PAÍS!"
                     jump timies3
@@ -558,7 +559,7 @@ label timies4:
                     "De repente a Mora le parece bastante apetecible la joya y se la come..."
                     "...Simplemente se la come..."
                     m "Mmmm..."
-                    m "Crunchy"
+                    m "Crunchy."
                     $ emerald = True
                     jump timies4
                 "Hacer un anuncio":
@@ -569,18 +570,22 @@ label timies4:
                     m "Estoy aquí para anunciar que..."
                     m "SHADOW THE HEDGEHOG IS A BITCHASS MOTHERFUCKER-"
                     "..."
-                    "Mientras Mora da su anuncio un murciélago entra en la habitación y la roba la joya"
+                    "Mientras Mora da su anuncio un murciélago entra en la habitación y la roba la joya."
                     $ emerald = True
                     m "..."
                     m "Esto es un crimen, de murciélago a murciélago..."
-                    m "No sé cómo sentirme al respecto"
+                    m "No sé cómo sentirme al respecto."
                     jump timies4
                 "¡CHAOS CONTROL!":
-                    "Mora tiene ansias de poder y decide tocar la joya"
+                    "Mora tiene ansias de poder y decide tocar la joya."
                     m "No sé por qué, pero siento que tengo que gritarlo..."
                     m "¡CHAOS CONTROL!"
-                    "El tiempo se para por unos momentos"
+                    stop music
+                    "El tiempo se para por unos momentos."
                     "Enhorabuena ¡Has desbloqueado ”Chaos Control”."
+                    $ emerald = True
+                    play music investigation
+                    jump timies4
         "Figura hecha bolita agarrándose la cabeza":
             "Cuándo Mora se acerca a la figura, se puede escuchar un sollozo muy suave y la voz de la figura diciendo:"
             "”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?” ”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?”"
@@ -609,7 +614,7 @@ label timies4:
                             jump timies4
                         "Sí":
                             m "Supongo que si me lo pedís vosotros no me queda otra...¿Pero cómo lo hago si no-?"
-                            "Al poco de empezar a hablar, en la mano de Mora aparece una aguja con lo que parece algún tipo de sedante en su interior"
+                            "Al poco de empezar a hablar, en la mano de Mora aparece una aguja con lo que parece algún tipo de sedante en su interior."
                             m "...Supongo que con esto...lo siento mucho..."
                             "Mora entonces agarra a la figura, la cual forcejea en pánico, y le clava la aguja en la espalda. En cuestión de 1 minuto o menos la figura para de forcejear y cae sedada al suelo."
                             "Tras esto, la figura amenazante aparece detrás de Mora, quien instintivamente se aparta, y se acerca a la figura tirada en el suelo."
