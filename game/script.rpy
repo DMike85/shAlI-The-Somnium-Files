@@ -362,11 +362,15 @@ label timies2:
                     jump timies2
                 "Gritar":
                     "Antes de poder preguntar nada sobre qué gritar, Mora se queda congelada y habla en esperanto por un momento. Tras esto, la figura desaparece."
+                    play sound noise
                     who "{font=font/NikkyouSans-mLKax.ttf}じゅんぺい フエゴ縁巫女らぞのNo...サリ地パパ区餌ぼろさSuéltame...おぇおぇぉ祖からこぇす"
+                    play sound noise
                     who "{font=font/NikkyouSans-mLKax.ttf}¡PARA! ペルソナ4ダンシングあるにと¡YOぱらぱてぇらっぱNOもんすたはたぬたりVOYしつふぁいたぐらいたふぉろAふぁたもる..."
                     m "..."
                     who "Jijiji" #ya veremos si aquí hay audio, aunque lo dudo
+                    play sound noise
                     who "{font=font/NikkyouSans-mLKax.ttf}眼へ久江田年にであしゃPodría ser divertido...パたぽのSolo...場ぞおかめたるぇ多M4t4r..."
+                    play sound noise
                     who "{font=font/NikkyouSans-mLKax.ttf}霧切霧切me haráぼるまらしすたsentir千尋藤崎vivaダンガンロンパ絵運ヴぃでおじゅえご" 
                     m "..."
                     m "¿Qué me ha pasado?... En cuanto me habéis dicho que grite..."
