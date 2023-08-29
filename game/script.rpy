@@ -1,6 +1,7 @@
 ﻿# odio programar
 
 init:
+    #scenes
     image black = "#000000"
     image white = "#FFFFFF"
     image red = "#ff0000"
@@ -21,26 +22,28 @@ init:
     image mora12 = "images/mora/Mora 12.png"
     image mora13 = "images/mora/Mora 13.png"
     image mora14 = "images/mora/Mora 14.png"
+    #other sprites
+    image spamton = "images/spamton.png"
 
-    image spamton = "images/spamton.pngj"
     $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
+
+    define audio.door = "audio/door_opening.mp3"
+    define audio.spamton ="audio/Spamton.mp3"
+    define audio.explosion = "audio/explosion.mp3"
+    define audio.somnium_scan = "audio/somnium_scan.ogg"
+    define audio.mental_lock = "audio/mental_lock.ogg"
+    define audio.investigation = "audio/investigation.mp3"
+    define audio.psync_room = "audio/psync_room.mp3"
+    define audio.psync_init = "audio/psync_init.mp3"
+    define audio.psync_end = "audio/psync_end.mp3"
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define audio.door = "audio/door_opening.mp3"
-define audio.spamton ="audio/Spamton.mp3"
-define audio.explosion = "audio/explosion.mp3"
-define audio.somnium_scan = "audio/somnium_scan.ogg"
-define audio.mental_lock = "audio/mental_lock.ogg"
-define audio.investigation = "audio/investigation.mp3"
-define audio.psync_room = "audio/psync_room.mp3"
-define audio.psync_init = "audio/psync_init.mp3"
-define audio.psync_end = "audio/psync_end.mp3"
-define m = Character("Mora",who_color="#69498a")
-
-define pancake = Character("Pankechi", who_color="#b49247")
-define spam = Character("SPAMTON", who_color="#fffb00", kind=nvl)
-define nerd = Character("Silvia", who_color="#15ff00")
+    define m = Character("Mora",who_color="#69498a")
+    define pancake = Character("Pankechi", who_color="#b49247")
+    define spam = Character("SPAMTON", who_color="#fffb00", kind=nvl)
+    define nerd = Character("Silvia", who_color="#15ff00")
 
 label splashscreen:
     scene black
@@ -145,24 +148,24 @@ label start:
 
     pause(3.0)
 
-    hide movil
+    hide movil_lock
     play sound mental_lock
     show figura
 
     pause(3.0)
 
-    hide figura
+    hide figura_lock
     play sound mental_lock
     show polea
 
     pause(3.0)
 
-    hide polea
+    hide polea_lock
     play sound mental_lock
     show bolita
 
     pause(3.0)
-    hide bolita
+    hide bolita_lock
     show mora9 at left:
         zoom 0.45
     m "¡Vamos a ello!"
