@@ -287,17 +287,20 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    fixed:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        #xpos gui.navigation_xpos
+        #yalign 0.5
 
         spacing gui.navigation_spacing
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            #textbutton _("Start") action Start()
+
+            imagebutton auto "images/menu/start_%s.png" xpos 60 ypos 241 focus_mask True action Start() hovered [Play("sound","audio/button_menu.mp3")]
+
 
         else:
 
@@ -305,9 +308,13 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        #textbutton _("Load") action ShowMenu("load")
+        
+        imagebutton auto "images/menu/load_%s.png" xpos 60 ypos 288 focus_mask True action ShowMenu("load") hovered [Play("sound","audio/button_menu.mp3")]
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        #textbutton _("Preferences") action ShowMenu("preferences")
+        
+        imagebutton auto "images/menu/options_%s.png" xpos 60 ypos 334 focus_mask True action ShowMenu("preferences") hovered [Play("sound","audio/button_menu.mp3")]
 
         if _in_replay:
 
@@ -317,18 +324,21 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        #textbutton _("About") action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        imagebutton auto "images/menu/credits_%s.png" xpos 60 ypos 380 focus_mask True action ShowMenu("about") hovered [Play("sound","audio/button_menu.mp3")]
+
+        #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            #textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            #textbutton _("Quit") action Quit(confirm=not main_menu)
+            imagebutton auto "images/menu/quit_%s.png" xpos 60 ypos 425 focus_mask True action Quit(confirm=not main_menu) hovered [Play("sound","audio/button_menu.mp3")]
 
 
 style navigation_button is gui_button
@@ -371,6 +381,11 @@ screen main_menu():
             text "[config.name!t]":
                 style "main_menu_title"
 
+            
+    if gui.show_version:
+        vbox:
+            style "main_menu_vbox"
+            
             text "[config.version]":
                 style "main_menu_version"
 
