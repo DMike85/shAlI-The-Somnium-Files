@@ -836,7 +836,6 @@ label timies4:
                     jump timies4
                 "Desintegración molecular":
                     hide mora3
-                        zoom 0.45
                     play music epic
                     show mora9 at left:
                         zoom 0.45
