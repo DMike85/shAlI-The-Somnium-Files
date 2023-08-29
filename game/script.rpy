@@ -22,11 +22,14 @@ init:
     image mora13 = "images/mora/Mora 13.png"
     image mora14 = "images/mora/Mora 14.png"
 
-    image spamton = "images/spamton.pngj"
+    image spamton = "images/spamton.png"
     $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+define audio.footsteps = "audio/footsteps.mp3"
+define audio.delicious_pancakes = "audio/delicious_pancakes.ogg"
+define audio.gunshot = "audio/gunshot.mp3"
 define audio.door = "audio/door_opening.mp3"
 define audio.spamton ="audio/Spamton.mp3"
 define audio.explosion = "audio/explosion.mp3"
@@ -375,26 +378,28 @@ label timies3:
         "Pankechi" if not pankechi:
             menu:
                 "Darle tortitas":
-                    "Mora obtiene unas tortitas y se las ofrece"
-                    "Pantechi las coloca en su cabeza mientras se aleja"
+                    "Mora obtiene unas tortitas y se las ofrece."
+                    play sound footsteps
+                    "Pankechi las coloca en su cabeza mientras se aleja."
                     "Crees escucharle decir..."
-                    #delicious pancakes.ogg
+                    play sound delicious_pancakes
                     "Delicious pancakes"
                     m "... ¿Creo que le gustan las tortitas?"
                     $ pankechi = True
                     jump timies3
                 "Oh dios mío, Pankechi del famoso videojuego People 5":
-                    "Al momento de decir esto, Pantechi mira a Mora y comienza a gritar:"
+                    "Al momento de decir esto, Pankechi mira a Mora y comienza a gritar:"
                     pancake "Ueghhh.. (o^▽^o) i'm getting a wawm tingwy f-feewing fwom all this power!"
                     m "... ¿Qwé? O_O"
-                    "Justo después de decir eso, Pantechi desaparece espontáneamente y no vuelve a aparecer."
+                    "Justo después de decir eso, Pankechi desaparece espontáneamente y no vuelve a aparecer."
                     $ pankechi = True
                     jump timies3
                 "Disparar en la cabeza":
                     "Mora saca un arma que aparece de Dios sabe dónde"
                     m "¡Persona!"
+                    play sound gunshot
                     "Mora aprieta el gatillo y le dispara"
-                    "Pantechi se muere"
+                    "Pankechi se muere"
                     m "..."
                     m "Ups, creo que ese era del People 3"
                     $ pankechi = True
@@ -402,13 +407,50 @@ label timies3:
         "Interactuable 4":
             m "Trujo"
     "Mora y los demás os desplazáis hacia la última parte de la habitación donde encontráis los siguientes objetos."
+label timies4:       
     menu:
         "Interactuable 1":
             m "jaja"
         "Interactuable 2":
             m "jiji"
         "Figura hecha bolita agarrándose la cabeza":
-            m "juju"
+            "Cuándo Mora se acerca a la figura, se puede escuchar un sollozo muy suave y la voz de la figura diciendo:"
+            "”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?” ”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?”"
+            menu:
+                "”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?” ”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?”{fast}"
+                "Consolar":
+                    "Mora se acerca a la figura y la abraza."
+                    m "Shhhhh todo está bien..."
+                    "La figura no reacciona"
+                    m "No parece que le haya ayudado a sentirse mejor..."
+                    jump timies4
+                "Felicitar":
+                    "Sin pensarlo dos veces Mora aplaude y felicita a la figura"
+                    m "¡Felicidades!"
+                    m "..."
+                    m "¿Por qué he hecho eso? y ¿En que iba a ayudar?"
+                    jump timies4
+                "Drogar":
+                    m "¿Qué? Pero...¡¿Por qué haría algo tan cruel?!"
+                    m "..."
+                    menu:
+                        m "¿Estáis seguros de que queréis hacer esto?"
+                        "No":
+                            m "Me imaginaba...no siento que sea lo correcto, además me da mucha pena."
+                            m "Probemos otra cosa"
+                            jump timies4
+                        "Sí":
+                            m "Supongo que si me lo pedís vosotros no me queda otra...¿Pero cómo lo hago si no-?"
+                            "Al poco de empezar a hablar, en la mano de Mora aparece una aguja con lo que parece algún tipo de sedante en su interior"
+                            m "...Supongo que con esto...lo siento mucho..."
+                            "Mora entonces agarra a la figura, la cual forcejea en pánico, y le clava la aguja en la espalda. En cuestión de 1 minuto o menos la figura para de forcejear y cae sedada al suelo."
+                            "Tras esto, la figura amenazante aparece detrás de Mora, quien instintivamente se aparta, y se acerca a la figura tirada en el suelo."
+                            "La figura amenazante procede a decirle en un tono medianamente burlón: ”¿Ahora cómo van a descubrirme si tú has hecho todo? Je. Y lo mejor de todo es que no serás capaz de decir palabra sobre ello... Te pasa por arruinar mis otros planes...”"
+                            "Tras esto la figura se aleja y en ese proceso Mora y vosotros sois capaces de ver que la figura lleva una bandolera negra y dos pulseras."
+                            m "...Creo que esto nos deja claro que esa figura es la responsable de todo."
+                            m "Lo que quiere decir que la figura del suelo..."
+                            m "..."
+                            m "Ese bastardo..."   
     m "Mierda, no nos queda tiempo ¡Tenemos que salir! ¡Tendréis que averiguar su identidad vosotros!"
     m "..."
     m "(Por mucho que me joda...)"
