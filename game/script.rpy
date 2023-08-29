@@ -37,6 +37,7 @@ init:
     default senior = False
     default yeet = False
     default die = False
+    default emerald = False
 
     define audio.glass = "audio/window_break.ogg"
     define audio.miku = "audio/miku.ogg"
@@ -332,7 +333,7 @@ label timies2:
                     m "¿Cómo que baile-?"
                     menu:
                         "Si":
-                            play music miku #inserte levan polka aquí
+                            play music miku
                             "Mora instantáneamente agarra el puerro para bailar al compás de la música"
                             "Tras acabar, el puerro desaparece de sus manos"
                             stop music
@@ -392,7 +393,7 @@ label timies2:
             menu:
                 m "¡Eh! ¡Reconozco a este personaje!{fast}"
                 "Investigar":
-                    m "Es un peluche de una de las idosl calamar del famoso juego Squidloon 1."
+                    m "Es un peluche de una de las idols calamar del famoso juego Squidloon 1."
                     m "Recuerdo ver a Shali jugar al tercer juego y ver a este personaje en el modo historia."
                     m "Después de que me contara sobre el lore de los juegos yo también me interesé."
                     jump timies2
@@ -503,7 +504,7 @@ label timies3:
                     "Al momento de decir esto, Pankechi mira a Mora y comienza a gritar:"
                     pancake "Ueghhh.. (o^▽^o) i'm getting a wawm tingwy f-feewing fwom all this power!"
                     m "... ¿Qwé? O_O"
-                    "Justo después de decir eso, Pankechi desaparece espontáneamente y no vuelve a aparecer."
+                    "Justo después de decir eso, Pankechi desaparece espontáneamente."
                     $ pankechi = True
                     jump timies3
                 "Disparar en la cabeza":
@@ -550,8 +551,36 @@ label timies4:
                     #inserte video de explosión nuclear
                     $ die = True
                     jump timies4
-        "Interactuable 2":
-            m "jiji"
+        "Esmeralda del caos" if not emerald:
+            menu:
+                m "Es una joya de un color verdoso"
+                "Comer":
+                    "De repente a Mora le parece bastante apetecible la joya y se la come..."
+                    "...Simplemente se la come..."
+                    m "Mmmm..."
+                    m "Crunchy"
+                    $ emerald = True
+                    jump timies4
+                "Hacer un anuncio":
+                    "Mora mira su mano y de repente encuentra un micrófono, al parecer también tiene una cámara apuntándola."
+                    "Está en directo por alguna razón..."
+                    m "Um..."
+                    m "¡Ahem!"
+                    m "Estoy aquí para anunciar que..."
+                    m "SHADOW THE HEDGEHOG IS A BITCHASS MOTHERFUCKER-"
+                    "..."
+                    "Mientras Mora da su anuncio un murciélago entra en la habitación y la roba la joya"
+                    $ emerald = True
+                    m "..."
+                    m "Esto es un crimen, de murciélago a murciélago..."
+                    m "No sé cómo sentirme al respecto"
+                    jump timies4
+                "¡CHAOS CONTROL!":
+                    "Mora tiene ansias de poder y decide tocar la joya"
+                    m "No sé por qué, pero siento que tengo que gritarlo..."
+                    m "¡CHAOS CONTROL!"
+                    "El tiempo se para por unos momentos"
+                    "Enhorabuena ¡Has desbloqueado ”Chaos Control”."
         "Figura hecha bolita agarrándose la cabeza":
             "Cuándo Mora se acerca a la figura, se puede escuchar un sollozo muy suave y la voz de la figura diciendo:"
             "”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?” ”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?”"
