@@ -304,9 +304,11 @@ screen navigation():
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            #textbutton _("History") action ShowMenu("history")
+            imagebutton auto "images/menu/history_%s.png" xpos 60 ypos 194 focus_mask True action ShowMenu("history") hovered [Play("sound","audio/button_menu.mp3")]
 
-            textbutton _("Save") action ShowMenu("save")
+            #textbutton _("Save") action ShowMenu("save")
+            imagebutton auto "images/menu/save_%s.png" xpos 60 ypos 241 focus_mask True action ShowMenu("save") hovered [Play("sound","audio/button_menu.mp3")]
 
         #textbutton _("Load") action ShowMenu("load")
         
@@ -322,7 +324,8 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            #textbutton _("Main Menu") action MainMenu()
+            imagebutton auto "images/menu/main_%s.png" xpos 60 ypos 147 focus_mask True action MainMenu() hovered [Play("sound","audio/button_menu.mp3")]
 
         #textbutton _("About") action ShowMenu("about")
 
