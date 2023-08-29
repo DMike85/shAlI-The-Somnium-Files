@@ -28,6 +28,7 @@ init:
     default pankechi = False
     default puerro = False
 
+    define audio.miku = "audio/miku.ogg"
     define audio.footsteps = "audio/footsteps.mp3"
     define audio.delicious_pancakes = "audio/delicious_pancakes.ogg"
     define audio.gunshot = "audio/gunshot.mp3"
@@ -314,12 +315,14 @@ label timies2:
                     m "¿Cómo que baile-?"
                     menu:
                         "Si":
-                            #inserte levan polka aquí
+                            play music miku #inserte levan polka aquí
                             "Mora instantáneamente agarra el puerro para bailar al compás de la música"
                             "Tras acabar, el puerro desaparece de sus manos"
+                            stop music
                             $ puerro = True
                             m "..."
                             m "¿Qué acaba de pasar?"
+                            play music investigation
                             jump timies2
         "Figura misteriosa y amenazante":
             "Mora se acerca a la figura, cuando de repente, la atrapa e intenta dejarla inconsciente"
