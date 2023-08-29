@@ -23,7 +23,7 @@ define audio.psync_init = "audio/psync_init.mp3"
 define audio.psync_end = "audio/psync_end.mp3"
 define m = Character("Mora",who_color="#69498a")
 
-define pancake = Character("Pantechi", who_color="#b49247")
+define pancake = Character("Pankechi", who_color="#b49247")
 define spam = Character("SPAMTON", who_color="#fffb00", kind=nvl)
 define nerd = Character("Silvia", who_color="#15ff00")
 
