@@ -290,6 +290,7 @@ label timies1:
                     m "Agentes, sigamos investigando, quizás encontremos más pistas."
         "Bate de béisbol":
             menu:
+                m "Un bate de béisbol"
                 "Investigar":
                     m "Es un bate de béisbol un tanto curioso, su diseño es muy único."
                     m "Tras revisar los archivos de mi memoria, he descubierto que se trata del bate de Kiana Kaslana, la protagonista de Honkai Impact 3rd."
@@ -304,9 +305,10 @@ label timies2:
     menu:
         "Puerro" if not puerro:
             menu:
+                m "Es... ¿Es eso un puerro?"
                 "Investigar":
                     m "..."
-                    m "Es un puerro, no sé qué más queréis que os diga sobre él"
+                    m "Es un puerro, no sé qué más queréis que os diga sobre él."
                     jump timies2
                 "Bailar":
                     m "¿Cómo que baile-?"
