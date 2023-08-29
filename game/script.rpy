@@ -271,26 +271,59 @@ label timies1:
             play music investigation
             jump timies1
         "Teléfono Móvil":
+            show mora4 at left:
+                zoom 0.45
             m "Es un smartphone, parece que está apagado." 
+            hide mora4
             menu:
                 "Lanzarlo contra la pared":
+                    show mora1 at left:
+                        zoom 0.45
                     m "Si creéis que la violencia es la solución a todos los problemas..."
+                    hide mora1
+                    show mora8 at left:
+                        zoom 0.45
                     m "No voy a cuestionaros."
+                    hide mora8
+                    show mora9 at left:
+                        zoom 0.45
                     m "Preparaos para presenciar mis dotes profesionales de lanzamiento."
                     m "¡HYYAAA!"
+                    hide mora9
                     "Mora lanza el móvil contra la pared con una fuerza sobrehumana."
                     "Lo hace tan fuerte que la pared se agrieta."
                     "El móvil permanece ileso."
+                    show mora7 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora7
+                    show mora5 at left:
+                        zoom 0.45
                     m "Vaya, debe de ser un No-kian si ha conseguido agrietar la pared así..."
+                    hide mora5
+                    show mora1 at left:
+                        zoom 0.45
                     m "Huh... espero que esto no tenga ningún impacto negativo para la cognición de Shali..."
+                    hide mora1
                     jump timies1
                 "Cargarlo":
                     "Mora mira alrededor en buscar de un cargador y un enchufe. No parece haber nada en los alrededores que sea remotamente similar."
+                    show mora9 at left:
+                        zoom 0.45
                     m "Sería una buena idea..."
+                    hide mora9
+                    show mora1 at left:
+                        zoom 0.45
                     m "Si no fuera porque no hay absolutamente nada con qué hacerlo..."
+                    hide mora1
+                    show mora8 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora8
+                    show mora1 at left:
+                        zoom 0.45
                     m "(¿Acaso ha habido alguna vez un cargador y un enchufe juntos en un somnium?)"
+                    hide mora1
                     jump timies1
                 "Encenderlo":
                     "Mora mantiene pulsado el botón de encendido y la pantalla se ilumina."
@@ -519,14 +552,14 @@ label timies3:
                     $ pankechi = True
                     jump timies3
                 "Disparar en la cabeza":
-                    "Mora saca un arma que aparece de Dios sabe dónde"
+                    "Mora saca un arma que aparece de Dios sabe dónde."
                     m "¡Persona!"
                     play sound gunshot
-                    "Mora aprieta el gatillo y le dispara"
+                    "Mora aprieta el gatillo y le dispara."
                     stop sound
-                    "Pankechi se muere"
+                    "Pankechi se muere."
                     m "..."
-                    m "Ups, creo que ese era del People 3"
+                    m "Ups, creo que ese era del People 3."
                     $ pankechi = True
                     jump timies3
         "Bandera lesbiana":
