@@ -21,8 +21,15 @@ init:
     image mora12 = "images/mora/Mora 12.png"
     image mora13 = "images/mora/Mora 13.png"
     image mora14 = "images/mora/Mora 14.png"
+    image moranx = "images/mora/Mora Naix.png"
     #other sprites
     image spamton = "images/spamton.png"
+
+    #images
+    image movil_lock = "images/locks/movil_lock.png"
+    image figura_lock = "images/locks/figura_lock.png"
+    image polea_lock = "images/locks/polea_lock.png"
+    image bolita_lock = "images/locks/bolita_lock.png"
 
     $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
@@ -41,6 +48,7 @@ init:
     define audio.psync_room = "audio/psync_room.mp3"
     define audio.psync_init = "audio/psync_init.mp3"
     define audio.psync_end = "audio/psync_end.mp3"
+    define audio.noise = "audio/white_noise.mp3"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -98,6 +106,8 @@ label start:
     scene somnium
     with Dissolve(1.5)
 
+    show moranx at center:
+        zoom 0.42 
     show mora1 at left:
         zoom 0.45 
         
@@ -107,8 +117,10 @@ label start:
     m "¿Eh? {w=1.0}¿Por qué estoy haciendo esto?"
 
     m "..."
+    
 
     m "Siento que he visto este símbolo en algún lado..."
+    hide moranx with dissolve
     hide mora1
     show mora8 at left:
         zoom 0.45
@@ -146,7 +158,7 @@ label start:
     m "SOMNIUM SCAN ACTIVATE!{p=11.0} {nw}" #Es bastante chufa, pero me ha dado dolores de cabeza hacer esto
     hide mora9
     window hide
-    pause(1.0)
+    pause(0.5)
 
     play sound mental_lock
     show movil_lock
@@ -170,8 +182,8 @@ label start:
     show bolita_lock
 
     pause(3.0)
-    hide bolita_lock
-    show mora9 at left:
+    hide bolita_lock with dissolve
+    show mora9 at left, with dissolve:
         zoom 0.45
     m "¡Vamos a ello!"
     hide mora9
