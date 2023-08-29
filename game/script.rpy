@@ -622,17 +622,31 @@ label timies3:
                     "Aparece un señor muy raro en pantalla ???"
                     $ senior = True
                     #señor
+                    show mora1 at left:
+                        zoom 0.45
                     m "???"
+                    hide mora1
                     jump timies3
                 "Coger pico":
                     "Mora trata de coger el pico numerosas veces, pero falla en todas ellas."
                     "404 inventory not found"
+                    show mora4 at left:
+                        zoom 0.45
                     m "..."
                     "404 inventory not found"
+                    hide mora4
+                    show mora8 at left:
+                        zoom 0.45
                     m "..."
                     "404 inventory not found"
+                    hide mora8
+                    show mora3 at left:
+                        zoom 0.45
                     m "¡ME CAGO EN-! {w=0.3} {nw}"
                     "404 inventory not found {w=0.25} {nw}"
+                    hide mora3
+                    show mora2 at left:
+                        zoom 0.45
                     m "¡DÉJAME {w=0.3} {nw}"
                     "404 inventory not found {w=0.25} {nw}"
                     m"COGER {w=0.3} {nw}"
@@ -641,25 +655,51 @@ label timies3:
                     "404 inventory not found {w=0.25} {nw}"
                     m"PICO!"
                     "404 inventory not found"
+                    hide mora2
+                    show mora3 at left:
+                        zoom 0.45
                     m"..."
                     m"Me rindo."
+                    hide mora3
                     jump timies3
         "Puerta":
+            show mora4 at left:
+                zoom 0.45
             menu:
                 m "Parece una puerta normal y corriente"
                 "Investigar":
+                    hide mora4
+                    show mora1 at left:
+                        zoom 0.45
                     m "Parece que esta puerta está atada a un complejo sistema de poleas..."
                     m "Hay un ladrillo cómicamente grande, colocado para que al abrir la puerta, este golpee a la persona en la cabeza y lance una cuerda que atrape su torso."
                     m "Tras esto, parece que el sistema de poleas se encargaría de arrastrar a la víctima, fuera de la ventana hacia ¿una obra?..."
+                    hide mora1
+                    show mora11 at left:
+                        zoom 0.45
                     m "Mmmm...la cuerda continua hasta...la viga ligeramente oxidada..."
                     m "Es la misma que la de la escena del crimen..."
                     m "..."
+                    hide mora11
+                    show mora8 at left:
+                        zoom 0.45
                     m "(Esto debe de ser cómo se produjo el asesinato...)"
+                    hide mora8
+                    show mora11 at left:
+                        zoom 0.45
                     m "(...)"
+                    hide mora11
                     jump timies3
                 "Desarmar":
+                    show mora1 at left:
+                        zoom 0.45
                     m "Ummm...dudo mucho que pueda desarmar esto...No hay ninguna herramienta y no conozco cómo o en qué orden se han ido colocando todos los elementos..."
+                    hide mora1
+                    show mora8 at left:
+                        zoom 0.45
                     m "No creo que sea la opción correcta."
+                    hide mora8
+                    jump timies3
                 "Abrir":
                     play sound door
                     "Mora abre la puerta."
@@ -669,16 +709,37 @@ label timies3:
                     play sound metal_pipe
                     "Una vez colocado en posición, sobre este cae una viga, ligeramente oxidada, dejando su cadáver en la misma posición y en las mismas condiciones en las que se había encontra el cuerpo."
                     stop sound
+                    show mora12 at left:
+                        zoom 0.45
                     m "Shali...¿Cómo sabes...?...No..."
                     m "¡Esto no tiene sentido! ¡No ha podido ser ella!"
                     m "Si hubiese sido ella, ¿Por qué aquella figura me desactivó y la atacó?"
+                    hide mora12
+                    show mora8 at left:
+                        zoom 0.45
                     m "Si bien es cierto que para cuando me pude reiniciar, ya había concluido todo el crimen, no me cuadra que estuviera en su estado actual de shock si ella fuera la asesina."
+                    hide mora8
+                    show mora9 at left:
+                        zoom 0.45
                     m "Agentes, ¿vosotros pensáis lo mismo, verdad?"
+                    hide mora9
+                    show mora8 at left:
+                        zoom 0.45
                     m "Quizás...simplemente ha estado en la escena del crimen...y ha visto el mecanismo...o puede que el asesino la obligara a mirar de mientras se producía el asesinato..."
                     m "..."
+                    hide mora8
+                    show mora11 at left:
+                        zoom 0.45
                     m "Estoy muy preocupada...todo esto tiene muy mala pinta...Shali... ¿Qué te ha hecho?"
+                    hide mora11
+                    show mora3 at left:
+                        zoom 0.45
                     m "Ugh. Tenemos que llegar a la conclusión de esto."
+                    hide mora3
+                    show mora8 at left:
+                        zoom 0.45
                     m "Solo nos queda un neurocandado. ¡Podemos hacerlo! ¡Saquemos la verdad a la luz!"
+                    hide mora8
         "Pankechi" if not pankechi:
             menu:
                 "Darle tortitas":
@@ -690,58 +751,97 @@ label timies3:
                     play sound delicious_pancakes
                     "Delicious pancakes"
                     stop sound
+                    show mora1 at left:
+                        zoom 0.45
                     m "... ¿Creo que le gustan las tortitas?"
                     $ pankechi = True
+                    hide mora1
                     jump timies3
                 "Oh dios mío, Pankechi del famoso videojuego People 5":
                     "Al momento de decir esto, Pankechi mira a Mora y comienza a gritar:"
                     pancake "Ueghhh.. (o^▽^o) i'm getting a wawm tingwy f-feewing fwom all this power!"
+                    show mora7 at left:
+                        zoom 0.45
                     m "... ¿Qwé? O_O"
                     "Justo después de decir eso, Pankechi desaparece espontáneamente."
                     $ pankechi = True
+                    hide mora7
                     jump timies3
                 "Disparar en la cabeza":
                     "Mora saca un arma que aparece de Dios sabe dónde."
+                    show mora9 at left:
+                        zoom 0.45
                     m "¡Persona!"
                     play sound gunshot
                     "Mora aprieta el gatillo y le dispara."
                     stop sound
                     "Pankechi se muere."
+                    hide mora9
+                    show mora12 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora12
+                    show mora11 at left:
+                        zoom 0.45
                     m "Ups, creo que ese era del People 3."
                     $ pankechi = True
+                    hide mora11
                     jump timies3
         "Bandera lesbiana":
+            show mora4 at left:
+                zoom 0.45
             m "Mujeres..."
             menu:
                 m "Mujeres...{fast}"
                 "Muestras respeto a la bandera":
                     "Mora hace el gesto de respeto a la bandera sin dudarlo un segundo."
+                    hide mora4
+                    show mora9 at left:
+                        zoom 0.45
                     m "¡ADORO MI PAÍS!"
+                    hide mora9
                     jump timies3
     "Mora y los demás os desplazáis hacia la última parte de la habitación donde encontráis los siguientes objetos."
 label timies4:       
     menu:
         "CaricaturazAbiertas" if not die:
+            show mora3 at left:
+                zoom 0.45
             m "No sé qué es eso, pero por alguna extraña razón me provoca violencia."
             menu:
                 m "No sé qué es eso, pero por alguna extraña razón me provoca violencia.{fast}"
                 "Romper":
+                    hide mora3
                     "Mora agarra el icono de CaricaturazAbiertas y lo DESTROZA hasta el punto de que apenas quedan restos de este."
                     $ die = True
+                    show mora14 at left:
+                        zoom 0.45
                     m "..."
+                    hide mora14
+                    show mora4 at left:
+                        zoom 0.45
                     m "¿?"
                     m "¿Por qué me miráis cómo si fuera una psicópata?"
+                    hide mora4
                     jump timies4
                 "Quemar":
+                    hide mora3
                     "Mora se apresura en tomar un mechero y lo prende fuego de manera casi inmediata."
                     #no sé si vais a querer poner el video, pero inserte aquí
+                    show mora2 at left:
+                        zoom 0.45
                     m "¡ARDE EN LAS PROFUNDIDADES DEL INFIERNO!"
                     $ die = True
+                    hide mora2
                     jump timies4
                 "Desintegración molecular":
+                    hide mora3
+                        zoom 0.45
                     play music epic
+                    show mora9 at left:
+                        zoom 0.45
                     m "¡MUERE!"
+                    hide mora9
                     play movie "video/atomic_bomb.mpeg"
                     $ renpy.pause(53.0, hard=True)
                     $ die = True
