@@ -48,6 +48,7 @@ init:
     default die = False
     default emerald = False
 
+    define audio.error = "audio/error.ogg"
     define audio.spooky = "audio/spooky.mp3"
     define audio.laugh = "audio/girl_laugh.mp3"
     define audio.epic = "audio/soul_of_cinder.ogg"
@@ -699,32 +700,40 @@ label timies3:
                     jump timies3
                 "Coger pico":
                     "Mora trata de coger el pico numerosas veces, pero falla en todas ellas."
+                    play sound error
                     "404 inventory not found"
                     show mora4 at left:
                         zoom 0.45
-                    m "...{w=2.0}{nw}"
+                    m "...{w=0.75}{nw}"
+                    play sound error
                     "404 inventory not found {w=1.5} {nw}"
                     hide mora4
                     show mora8 at left:
                         zoom 0.45
-                    m "...{w=2.0}{nw}"
+                    m "...{w=0.75}{nw}"
+                    play sound error
                     "404 inventory not found{w=1.5} {nw}"
                     hide mora8
                     show mora3 at left:
                         zoom 0.45
                     m "¡ME CAGO EN-! {w=0.3} {nw}"
+                    play sound error
                     "404 inventory not found {w=0.25} {nw}"
                     hide mora3
                     show mora2 at left:
                         zoom 0.45
                     m "¡DÉJAME {w=0.3} {nw}"
+                    play sound error
                     "404 inventory not found {w=0.25} {nw}"
                     m"COGER {w=0.3} {nw}"
+                    play sound error
                     "404 inventory not found {w=0.25} {nw}"
                     m"EL {w=0.3} {nw}"
+                    play sound error
                     "404 inventory not found {w=0.25} {nw}"
-                    m"PICO!{w=2.0}{nw}"
-                    "404 inventory not found{w=1.0}{nw}"
+                    m"PICO!{w=1.75}{nw}"
+                    play sound error
+                    "404 inventory not found{w=0.5}{nw}"
                     hide mora2
                     show mora3 at left:
                         zoom 0.45
