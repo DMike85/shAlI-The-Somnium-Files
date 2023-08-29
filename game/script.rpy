@@ -130,6 +130,11 @@ label timies1:
                     play sound explosion
                     with flash
                     $ renpy.quit()
+                "Seppuku":
+                    m "Bueno...si así lo habéis decidido... ¡Allá voy!"
+                    "Mora se hace el seppuku y cae al suelo"
+                    #Aquí va la animación de fallar en el somnium        
+            return
         "Contenedor de basura":
             play music spamton
             spam "HEY EVERY !! IT'S ME!!! EV3RY BUDDY 'S FAVORITE [[Number 1 Rated Salesman1997]] SPAMT SPAMTON G. SPAMTON!! WOAH!! IF IT ISN'T A... LIGHT nER! HEY-HE Y HEY!!! LOOKS LIKE YOU'RE{nw}" 
@@ -185,11 +190,49 @@ label timies1:
         "Interactuable 4":
             "d"
     "Mora continúa moviéndose por el Somnium mediante vuestras indicaciones y tras poco tiempo se encuentra con más objetos."
+label timies2:
     menu:
         "Interactuable 1":
             m "Ligma"
-        "Figura misteriosa":
-            m "balls"
+        "Figura misteriosa y amenazante":
+            "Mora se acerca a la figura, cuando de repente, la atrapa e intenta dejarla inconsciente"
+            menu:
+                "Súplex alemán":
+                    "Sin rechistar, Mora intenta hacer un súplex alemán a la figura, fallando en el intento, de tal forma que se hace el súplex a sí misma."
+                    m "¿Espera qué-? AAAAAAAAAAAAAAAA"
+                    m "¡Uf-!"
+                    m "Auch... ¿Cómo ha-?"
+                    m "..."
+                    m "Todos mis años cómo luchadora profesional se han ido por el desagüe..."
+                    jump timies2
+                "¿Quién eres?":
+                    m "¿Quién eres?"
+                    m "..."
+                    m "..."
+                    m "Me imaginaba que no iba a ser tan sencillo pero, joder tío, podrías al menos decir algo."
+                    jump timies2
+                "Intentar liberarse":
+                    "Mora forcejea con la figura y en el proceso es capaz de fijarse en que la figura lleva una bandolera negra"
+                    "Consigue soltarse, pero no parece que nada cambie realmente"
+                    m "¿QUÉ NARICES? ¿PERO QUÉ TE PASA?"
+                    m "UGH"
+                    m "No sé quién eres, pero cómo me vuelvas a tocar, te hago ASÍN y te quedas sin riñón."
+                    jump timies2
+                "Gritar":
+                    "Antes de poder preguntar nada sobre qué gritar, Mora se queda congelada y habla en esperanto por un momento. Tras esto, la figura desaparece."
+                    m "texto esperanto placeholder, son las 2 y media de la mañana y no estoy para carácteres especiales, no me jodas"
+                    m "..."
+                    m "Jijiji" #ya veremos si aquí hay audio, aunque lo dudo
+                    m "más texto en esperanto, de verdad que ya lo haré"
+                    m "..."
+                    m "¿Qué me ha pasado?... En cuanto me habéis dicho que grite..."
+                    m "¡OH! No sé qué habréis visto, pero ¡es probable que tenga relación con lo ocurrido tras que me desactivaran!"
+                    m "...Tiene toda la pinta de que esa figura fue quién lo hizo"
+                    m "Y por ende..."
+                    m "Es muy probable que también sea el asesino y el culpable de que Shali esté así..."
+                    m "Llevaba una bandolera negra...Mmm, no es que sea un detalle muy identificativo... pero puede ayudarnos en algún momento."
+                    m "..."
+                    m "¡Continuemos! Aún hay mucho que averigüar." 
         "Interactuable 3":
             m "who's Steve Jobs?"
     "Miráis alrededor de la sala, buscando más objetos, cuando de la nada, estos aparecen ante vosotros."
