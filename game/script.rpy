@@ -147,25 +147,25 @@ label start:
     pause(1.0)
 
     play sound mental_lock
-    show movil
+    show movil_lock
 
     pause(3.0)
 
     hide movil_lock
     play sound mental_lock
-    show figura
+    show figura_lock
 
     pause(3.0)
 
     hide figura_lock
     play sound mental_lock
-    show polea
+    show polea_lock
 
     pause(3.0)
 
     hide polea_lock
     play sound mental_lock
-    show bolita
+    show bolita_lock
 
     pause(3.0)
     hide bolita_lock
@@ -216,6 +216,7 @@ label timies1:
                 "Seppuku":
                     hide mora5
                     show mora11 at left:
+                        zoom 0.45
                     m "Bueno...si así lo habéis decidido... ¡Allá voy!"
                     hide mora11
                     stop music
