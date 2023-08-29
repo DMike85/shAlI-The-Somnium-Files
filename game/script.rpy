@@ -30,6 +30,7 @@ init:
     image figura_lock = "images/locks/figura_lock.png"
     image polea_lock = "images/locks/polea_lock.png"
     image bolita_lock = "images/locks/bolita_lock.png"
+    image toweet = "images/miguel_toweet.png"
 
     $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
@@ -333,13 +334,15 @@ label timies1:
                     m "..."
                     m "Qué raro...solo hay una app. TO-Witter - Bueno, Z..."
                     m "Este Jen Follet, desde que creó las Trollface Coins sólo toma malas decisiones."
-                    #Aquí va la imagen del toweet, ya se peleará con ello la Silvia del futuro.
-                    #Se puede poner con la AI vision que muestre la imagen del toweet
+                    show toweet at truecenter:
+                        zoom 0.1
+                        ease 0.1 zoom 0.5
                     m "La última actividad digital de la víctima es un tweet que habla sobre un videojuego."
                     m "Parece que no era de su agrado."
                     m "Mmm...es bastante curioso que la diferencia de tiempo entre la publicación de este toweet y la hora de la muerte sea tan pequeña..."
                     m "¿Es posible que el asesino estuviera en la misma habitación que la víctima en el momento de la publicación?"
                     m "Pero...no había signos de que más de una persona haya estado en la casa..."
+                    hide toweet with zoomout
                     m "Mmm..."
                     m "Agentes, sigamos investigando, quizás encontremos más pistas."
         "Bate de béisbol":

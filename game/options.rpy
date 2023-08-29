@@ -41,6 +41,7 @@ Investigad mientras celebráis el cumpleaños de nuestra querida Shali.
 ## or semicolons.
 
 define build.name = "shAlITheSomniumFiles"
+define build.directory_name = "devbuild"
 
 
 ## Sounds and music ############################################################
