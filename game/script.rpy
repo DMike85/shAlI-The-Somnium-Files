@@ -622,9 +622,12 @@ label timies2:
                     m "Después de que me contara sobre el lore de los juegos yo también me interesé."
                     jump timies2
                 "Abrazar":
+                    hide mora9
                     "Mora agarra el peluche y lo abraza."
                     "..."
                     "Lo abraza durante un buen rato."
+                    show mora4 at left:
+                        zoom 0.45
                     m "Es muy suave..."
                     hide mora4
                     show mora11 at left:
@@ -634,6 +637,7 @@ label timies2:
                     hide mora11
                     jump timies2
                 "Lanzar":
+                    hide mora9
                     show mora11 at left:
                         zoom 0.45
                     m "Aw, pero no quiero lanzarla..."
@@ -698,13 +702,13 @@ label timies3:
                     "404 inventory not found"
                     show mora4 at left:
                         zoom 0.45
-                    m "..."
-                    "404 inventory not found {w=1.0} {nw}"
+                    m "...{w=2.0}{nw}"
+                    "404 inventory not found {w=1.5} {nw}"
                     hide mora4
                     show mora8 at left:
                         zoom 0.45
-                    m "..."
-                    "404 inventory not found"
+                    m "...{w=2.0}{nw}"
+                    "404 inventory not found{w=1.5} {nw}"
                     hide mora8
                     show mora3 at left:
                         zoom 0.45
@@ -719,8 +723,8 @@ label timies3:
                     "404 inventory not found {w=0.25} {nw}"
                     m"EL {w=0.3} {nw}"
                     "404 inventory not found {w=0.25} {nw}"
-                    m"PICO!"
-                    "404 inventory not found"
+                    m"PICO!{w=2.0}{nw}"
+                    "404 inventory not found{w=1.0}{nw}"
                     hide mora2
                     show mora3 at left:
                         zoom 0.45
@@ -757,6 +761,7 @@ label timies3:
                     hide mora11
                     jump timies3
                 "Desarmar":
+                    hide mora4
                     show mora1 at left:
                         zoom 0.45
                     m "Ummm...dudo mucho que pueda desarmar esto...No hay ninguna herramienta y no conozco cómo o en qué orden se han ido colocando todos los elementos..."
@@ -767,13 +772,14 @@ label timies3:
                     hide mora8
                     jump timies3
                 "Abrir":
+                    hide mora4
                     play sound door
                     "Mora abre la puerta."
                     "Miguel aparece, y todo el sistema de poleas repite el mismo proceso que en la realidad. En cuanto abre la puerta, un ladrillo cómicamente grande le golpea en la cabeza dejándolo K.O"
                     "De mientras cae al suelo, una cuerda se engancha a su torso, atrapándolo. Las poleas comienzan a moverse y arrastran el cuerpo por el suelo hasta llegar a una ventana."
                     "La cuerda tira del cuerpo y lo saca de la casa por la ventana para seguir arrastrándolo por la calle hasta la obra más cercana."
                     play sound metal_pipe
-                    "Una vez colocado en posición, sobre este cae una viga, ligeramente oxidada, dejando su cadáver en la misma posición y en las mismas condiciones en las que se había encontra el cuerpo."
+                    "Una vez colocado en posición, sobre este cae una viga, ligeramente oxidada, dejando su cadáver en la misma posición y en las mismas condiciones en las que se había encontrado el cuerpo."
                     stop sound
                     show mora12 at left:
                         zoom 0.45
@@ -916,7 +922,7 @@ label timies4:
             show mora4 at left:
                 zoom 0.45
             menu:
-                m "Es una joya de un color verdoso"
+                m "Es una joya de un color verdoso."
                 "Comer":
                     hide mora4
                     "De repente a Mora le parece bastante apetecible la joya y se la come..."
