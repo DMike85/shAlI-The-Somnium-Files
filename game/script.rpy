@@ -39,6 +39,7 @@ init:
     default die = False
     default emerald = False
 
+    define audio.epic = "audio/soul_of_cinder.ogg"
     define audio.glass = "audio/window_break.ogg"
     define audio.miku = "audio/miku.ogg"
     define audio.footsteps = "audio/footsteps.mp3"
@@ -479,6 +480,7 @@ label timies3:
                     "La cuerda tira del cuerpo y lo saca de la casa por la ventana para seguir arrastrándolo por la calle hasta la obra más cercana."
                     play sound metal_pipe
                     "Una vez colocado en posición, sobre este cae una viga, ligeramente oxidada, dejando su cadáver en la misma posición y en las mismas condiciones en las que se había encontra el cuerpo."
+                    stop sound
                     m "Shali...¿Cómo sabes...?...No..."
                     m "¡Esto no tiene sentido! ¡No ha podido ser ella!"
                     m "Si hubiese sido ella, ¿Por qué aquella figura me desactivó y la atacó?"
@@ -495,9 +497,11 @@ label timies3:
                     "Mora obtiene unas tortitas y se las ofrece."
                     play sound footsteps
                     "Pankechi las coloca en su cabeza mientras se aleja."
+                    stop sound
                     "Crees escucharle decir..."
                     play sound delicious_pancakes
                     "Delicious pancakes"
+                    stop sound
                     m "... ¿Creo que le gustan las tortitas?"
                     $ pankechi = True
                     jump timies3
@@ -513,6 +517,7 @@ label timies3:
                     m "¡Persona!"
                     play sound gunshot
                     "Mora aprieta el gatillo y le dispara"
+                    stop sound
                     "Pankechi se muere"
                     m "..."
                     m "Ups, creo que ese era del People 3"
@@ -547,10 +552,12 @@ label timies4:
                     $ die = True
                     jump timies4
                 "Desintegración molecular":
-                    #inserte música épica
+                    play music epic
                     m "¡MUERE!"
-                    #inserte video de explosión nuclear
+                    play movie "video/atomic_bomb.mp4"
+                    $ renpy.pause(53.0, hard=True)
                     $ die = True
+                    play music investigation
                     jump timies4
         "Esmeralda del caos" if not emerald:
             menu:
