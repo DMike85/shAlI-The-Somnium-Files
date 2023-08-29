@@ -13,6 +13,7 @@ init:
     default pankechi = False
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+define audio.door = "audio/door_opening.mp3"
 define audio.spamton ="audio/Spamton.mp3"
 define audio.explosion = "audio/explosion.mp3"
 define audio.somnium_scan = "audio/somnium_scan.ogg"
@@ -267,6 +268,7 @@ label timies3:
                     m "Ummm...dudo mucho que pueda desarmar esto...No hay ninguna herramienta y no conozco cómo o en qué orden se han ido colocando todos los elementos..."
                     m "No creo que sea la opción correcta."
                 "Abrir":
+                    play sound door
                     "Mora abre la puerta"
                     "Miguel aparece, y todo el sistema de poleas repite el mismo proceso que en la realidad. En cuanto abre la puerta, un ladrillo cómicamente grande le golpea en la cabeza dejándolo K.O"
                     "De mientras cae al suelo, una cuerda se engancha a su torso, atrapándolo. Las poleas comienzan a moverse y arrastran el cuerpo por el suelo hasta llegar a una ventana."
@@ -293,7 +295,7 @@ label timies3:
                     m "... ¿Creo que le gustan las tortitas?"
                     $ pankechi = True
                     jump timies3
-                "Oh dios mío, Pantechi del famoso videojuego People 5":
+                "Oh dios mío, Pankechi del famoso videojuego People 5":
                     "Al momento de decir esto, Pantechi mira a Mora y comienza a gritar:"
                     pancake "Ueghhh.. (o^▽^o) i'm getting a wawm tingwy f-feewing fwom all this power!"
                     m "... ¿Qwé? O_O"
