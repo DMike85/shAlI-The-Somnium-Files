@@ -690,6 +690,7 @@ label timies3:
                     hide mora4
                     jump timies3
                 "N/A" if not senior:
+                    hide mora1
                     "Aparece un señor muy raro en pantalla ???"
                     $ senior = True
                     #señor
@@ -699,6 +700,7 @@ label timies3:
                     hide mora1
                     jump timies3
                 "Coger pico":
+                    hide mora1
                     "Mora trata de coger el pico numerosas veces, pero falla en todas ellas."
                     play sound error
                     "404 inventory not found"
