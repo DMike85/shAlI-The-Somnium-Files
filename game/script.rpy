@@ -4,7 +4,12 @@ init:
     image black = "#000000"
     image white = "#FFFFFF"
     image somnium = "somnium.jpg"
-    $ flash = Fade(.25, 0, .75, color="#fff")
+    
+    # Sprites de Mora
+    image mora_naix = "images/mora/Mora 14.png"
+
+
+    $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -13,16 +18,19 @@ define audio.explosion = "audio/explosion.mp3"
 define audio.somnium_scan = "audio/somnium_scan.ogg"
 define audio.mental_lock = "audio/mental_lock.ogg"
 define audio.investigation = "audio/investigation.mp3"
+define audio.psync_room = "audio/psync_room.mp3"
 define audio.psync_init = "audio/psync_init.mp3"
-define m = Character("Mora")
-define pancake = Character("Pankechi")
-define spam = Character("SPAMTON", kind=nvl)
-define nerd = Character("Silvia")
+define audio.psync_end = "audio/psync_end.mp3"
+define m = Character("Mora",who_color="#69498a")
+
+define pancake = Character("Pantechi", who_color="#b49247")
+define spam = Character("SPAMTON", who_color="#fffb00", kind=nvl)
+define nerd = Character("Silvia", who_color="#15ff00")
 
 # The game starts here.
 
 label start:
-
+    show mora_naix
     stop music fadeout 0.5
 
     # Show a background. This uses a placeholder by default, but you can
@@ -31,7 +39,7 @@ label start:
 
     scene black
     with Dissolve(1.0)
-
+    play music psync_room
     pause(5.0)
     "Recordad Agentes, sólo os podéis quedar en Somnium por 6 minutos."
 
@@ -54,7 +62,9 @@ label start:
     scene somnium
     with Dissolve(1.5)
 
-    show Mora naix
+    show mora_naix at left, onlayer sprites:
+        zoom 0.45 
+        
 
     # These display lines of dialogue.
 
@@ -276,25 +286,25 @@ label timies3:
             menu:
                 "Darle tortitas":
                     "Mora obtiene unas tortitas y se las ofrece"
-                    "Pankechi las coloca en su cabeza mientras se aleja"
+                    "Pantechi las coloca en su cabeza mientras se aleja"
                     "Crees escucharle decir..."
                     #delicious pancakes.ogg
                     "Delicious pancakes"
                     m "... ¿Creo que le gustan las tortitas?"
                     $ pankechi = True
                     jump timies3
-                "Oh dios mío, Pankechi del famoso videojuego People 5":
-                    "Al momento de decir esto, Pankechi mira a Mora y comienza a gritar:"
+                "Oh dios mío, Pantechi del famoso videojuego People 5":
+                    "Al momento de decir esto, Pantechi mira a Mora y comienza a gritar:"
                     pancake "Ueghhh.. (o^▽^o) i'm getting a wawm tingwy f-feewing fwom all this power!"
                     m "... ¿Qwé? O_O"
-                    "Justo después de decir eso, Pankechi desaparece espontáneamente y no vuelve a aparecer."
+                    "Justo después de decir eso, Pantechi desaparece espontáneamente y no vuelve a aparecer."
                     $ pankechi = True
                     jump timies3
                 "Disparar en la cabeza":
                     "Mora saca un arma que aparece de Dios sabe dónde"
                     m "¡Persona!"
                     "Mora aprieta el gatillo y le dispara"
-                    "Pankechi se muere"
+                    "Pantechi se muere"
                     m "..."
                     m "Ups, creo que ese era del People 3"
                     $ pankechi = True
@@ -313,13 +323,22 @@ label timies3:
     m "..."
     m "(Por mucho que me joda...)"
     stop music
-    window hide
+    window hide dissolve
+    scene white
+    with Dissolve(1.0)
+    play movie "video/somn_end.mpeg"
+    #$ renpy.pause(8, hard=True)
+    pause(8)
     scene black
     with Dissolve(1.0)
+    play sound psync_end
+    play music psync_room
     pause(3.0)
     "Agentes, debereis repasar la información que se os ha otorgado y averiguar quién es esa figura amenazante."
     "¿Quién será? ¿Acaso podéis fiaros los unos de los otros?"
-    "Sea cómo sea, deberéis llevarlo ante la justicia... Hacedlo por la agente Shali."
+    "Sea cómo sea, deberéis llevarlo ante la justicia...{w=0.75} Hacedlo por la agente Shali."
+    window hide dissolve
+    pause(3.0)
     # This ends the game.
 
     return
