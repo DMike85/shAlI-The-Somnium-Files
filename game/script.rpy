@@ -6,6 +6,10 @@ init:
     image white = "#FFFFFF"
     image red = "#ff0000"
     image somnium = "somnium.jpg"
+    image movil = "images/movil.png"
+    image figura = "images/figura.png"
+    image polea = "images/polea.png"
+    image bolita = "images/bolita.png"
     # Sprites de Mora
     image mora1 = "images/mora/Mora 1.png"
     image mora2 = "images/mora/Mora 2.png"
@@ -24,6 +28,7 @@ init:
     image moranx = "images/mora/Mora Naix.png"
     #other sprites
     image spamton = "images/spamton.png"
+    image nerd = "images/nerd.png"
 
     #images
     image movil_lock = "images/locks/movil_lock.png"
@@ -31,6 +36,9 @@ init:
     image polea_lock = "images/locks/polea_lock.png"
     image bolita_lock = "images/locks/bolita_lock.png"
     image toweet = "images/miguel_toweet.png"
+    image bate = "images/bate.png"
+    image puerro = "images/puerro.png"
+    image movilai = "images/movilai.png"
 
     $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
@@ -272,6 +280,10 @@ label timies1:
             play music investigation
             jump timies1
         "Teléfono Móvil":
+            scene movil with Dissolve(1.0)
+            show movilai at truecenter:
+                        zoom 0.1
+                        ease 0.1 zoom 0.5
             show mora4 at left:
                 zoom 0.45
             m "Es un smartphone, parece que está apagado." 
@@ -290,6 +302,7 @@ label timies1:
                         zoom 0.45
                     m "Preparaos para presenciar mis dotes profesionales de lanzamiento."
                     m "¡HYYAAA!"
+                    hide movilai with zoomout
                     hide mora9
                     "Mora lanza el móvil contra la pared con una fuerza sobrehumana."
                     "Lo hace tan fuerte que la pared se agrieta."
@@ -325,6 +338,7 @@ label timies1:
                         zoom 0.45
                     m "(¿Acaso ha habido alguna vez un cargador y un enchufe juntos en un somnium?)"
                     hide mora1
+                    hide movilai with zoomout
                     jump timies1
                 "Encenderlo":
                     "Mora mantiene pulsado el botón de encendido y la pantalla se ilumina."
@@ -343,11 +357,12 @@ label timies1:
                     show mora1 at left:
                         zoom 0.45
                     m "..."
-                    m "Qué raro...solo hay una app. TO-Witter - Bueno, Z..."
+                    m "Qué raro... solo hay una app. TO-Witter - Bueno, Z..."
                     hide mora1
                     show mora8 at left:
                         zoom 0.45
                     m "Este Jen Follet, desde que creó las Trollface Coins sólo toma malas decisiones."
+                    hide movilai
                     show toweet at truecenter:
                         zoom 0.1
                         ease 0.1 zoom 0.5
@@ -362,7 +377,7 @@ label timies1:
                     hide mora5
                     show mora1 at left:
                         zoom 0.45
-                    m "Mmm...es bastante curioso que la diferencia de tiempo entre la publicación de este toweet y la hora de la muerte sea tan pequeña..."
+                    m "Mmm... es bastante curioso que la diferencia de tiempo entre la publicación de este toweet y la hora de la muerte sea tan pequeña..."
                     hide mora1
                     show mora9 at left:
                         zoom 0.45
@@ -370,7 +385,7 @@ label timies1:
                     hide mora9
                     show mora11 at left:
                         zoom 0.45
-                    m "Pero...no había signos de que más de una persona haya estado en la casa..."
+                    m "Pero... no había signos de que más de una persona haya estado en la casa..."
                     hide toweet with zoomout
                     hide mora11
                     show mora1 at left:
@@ -390,7 +405,9 @@ label timies1:
                     hide mora4
                     show mora5 at left:
                         zoom 0.45
-                    #aqui se pone la imagen del bate de béisbol
+                    show bate at truecenter:
+                        zoom 0.1
+                        ease 0.1 zoom 0.5
                     m "Es un bate de béisbol un tanto curioso, su diseño es muy único."
                     hide mora5
                     show mora4 at left:
@@ -398,17 +415,19 @@ label timies1:
                     m "Tras revisar los archivos de mi memoria, he descubierto que se trata del bate de Kiana Kaslana, la protagonista de Honkai Impact 3rd."
                     m "Es un juego que le encanta a Shali."
                     hide mora4
+                    hide bate with zoomout
                     jump timies1
                 "Colocar sobre los hombros":
                     "Mora coloca el bate sobre sus hombros. Instantáneamente se siente mucho más fuerte y lesbiana por cierto personaje de pelo morado."
                     hide mora4
                     show mora8 at left:
                         zoom 0.45
-                    m "De repento siento unas ganas enormes de golepar a un tal Kevin Kaslana"
+                    m "De repento siento unas ganas enormes de golepar a un tal Kevin Kaslana."
                     hide mora8
                     jump timies1
     "Mora continúa moviéndose por el Somnium mediante vuestras indicaciones y tras poco tiempo se encuentra con más objetos."
 label timies2:
+    scene somnium with Dissolve(1.0)
     menu:
         "Puerro" if not puerro:
             show mora1 at left:
@@ -416,9 +435,13 @@ label timies2:
             menu:
                 m "Es... ¿Es eso un puerro?"
                 "Investigar":
+                    show puerro at truecenter:
+                        zoom 0.1
+                        ease 0.1 zoom 0.5
                     m "..."
                     m "Es un puerro, no sé qué más queréis que os diga sobre él."
                     hide mora1
+                    hide puerro with zoomout
                     jump timies2
                 "Bailar":
                     show mora1 at left:
@@ -442,8 +465,51 @@ label timies2:
                             play music investigation
                             hide mora11
                             jump timies2
+                        "Hazlo":
+                            play music miku
+                            "Mora instantáneamente agarra el puerro para bailar al compás de la música"
+                            "Tras acabar, el puerro desaparece de sus manos."
+                            stop music
+                            $ puerro = True
+                            m "..."
+                            m "¿Qué acaba de pasar?"
+                            play music investigation
+                            jump timies2
+                        "Por favor":
+                            play music miku
+                            "Mora instantáneamente agarra el puerro para bailar al compás de la música"
+                            "Tras acabar, el puerro desaparece de sus manos."
+                            stop music
+                            $ puerro = True
+                            m "..."
+                            m "¿Qué acaba de pasar?"
+                            play music investigation
+                            hide mora11
+                            jump timies2
+                        "Hazlo":
+                            play music miku
+                            "Mora instantáneamente agarra el puerro para bailar al compás de la música"
+                            "Tras acabar, el puerro desaparece de sus manos."
+                            stop music
+                            $ puerro = True
+                            m "..."
+                            m "¿Qué acaba de pasar?"
+                            play music investigation
+                            jump timies2
+                        "Por favor":
+                            play music miku
+                            "Mora instantáneamente agarra el puerro para bailar al compás de la música"
+                            "Tras acabar, el puerro desaparece de sus manos."
+                            stop music
+                            $ puerro = True
+                            m "..."
+                            m "¿Qué acaba de pasar?"
+                            play music investigation
+                            jump timies2
         "Figura misteriosa y amenazante":
+            scene figura
             "Mora se acerca a la figura, cuando de repente, la atrapa e intenta dejarla inconsciente."
+            
             menu:
                 "Súplex alemán":
                     "Sin rechistar, Mora intenta hacer un súplex alemán a la figura, fallando en el intento, de tal forma que se hace el súplex a sí misma."
