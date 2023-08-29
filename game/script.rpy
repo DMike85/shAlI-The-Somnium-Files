@@ -39,6 +39,8 @@ init:
     default die = False
     default emerald = False
 
+    default audio.spooky = "audio/spooky.mp3"
+    define audio.laugh = "audio/girl_laugh.mp3"
     define audio.epic = "audio/soul_of_cinder.ogg"
     define audio.glass = "audio/window_break.ogg"
     define audio.miku = "audio/miku.ogg"
@@ -251,7 +253,6 @@ label timies1:
                     #Aquí va la animación de fallar en el somnium        
             return
         "Contenedor de basura":
-            # Añadir doblaje de este dialogo de spamton
             play music spamton
             show spamton at left
             spam "HEY EVERY !! IT'S ME!!! EV3RY BUDDY 'S FAVORITE [[Number 1 Rated Salesman1997]] SPAMT SPAMTON G. SPAMTON!! WOAH!! IF IT ISN'T A... LIGHT nER! HEY-HE Y HEY!!! LOOKS LIKE YOU'RE{nw}" 
@@ -368,13 +369,16 @@ label timies2:
                     m "No sé quién eres, pero cómo me vuelvas a tocar, te hago ASÍN y te quedas sin riñón."
                     jump timies2
                 "Gritar":
+                    play music spooky
                     "Antes de poder preguntar nada sobre qué gritar, Mora se queda congelada y habla en esperanto por un momento. Tras esto, la figura desaparece."
                     play sound noise
                     who "{font=font/NikkyouSans-mLKax.ttf}じゅんぺい フエゴ縁巫女らぞのNo...サリ地パパ区餌ぼろさSuéltame...おぇおぇぉ祖からこぇす"
                     play sound noise
                     who "{font=font/NikkyouSans-mLKax.ttf}¡PARA! ペルソナ4ダンシングあるにと¡YOぱらぱてぇらっぱNOもんすたはたぬたりVOYしつふぁいたぐらいたふぉろAふぁたもる..."
                     m "..."
-                    who "Jijiji" #ya veremos si aquí hay audio, aunque lo dudo
+                    play sound laugh
+                    who "Jijiji"
+                    stop sound
                     play sound noise
                     who "{font=font/NikkyouSans-mLKax.ttf}眼へ久江田年にであしゃPodría ser divertido...パたぽのSolo...場ぞおかめたるぇ多M4t4r..."
                     play sound noise
@@ -387,7 +391,9 @@ label timies2:
                     m "Y por ende..."
                     m "Es muy probable que también sea el asesino y el culpable de que Shali esté así..."
                     m "Llevaba una bandolera negra...Mmm, no es que sea un detalle muy identificativo... pero puede ayudarnos en algún momento."
+                    stop music
                     m "..."
+                    play music investigation
                     m "¡Continuemos! Aún hay mucho que averigüar." 
         "Peluche de Calamar Cantante" if not yeet:
             m "¡Eh! ¡Reconozco a este personaje!"
