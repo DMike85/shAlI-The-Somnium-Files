@@ -49,6 +49,7 @@ init:
     define audio.psync_init = "audio/psync_init.mp3"
     define audio.psync_end = "audio/psync_end.mp3"
     define audio.noise = "audio/white_noise.mp3"
+    define audio.metal_pipe = "audio/metal_pipe.mp3"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
