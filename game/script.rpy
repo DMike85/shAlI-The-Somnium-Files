@@ -6,7 +6,6 @@ init:
     image white = "#FFFFFF"
     image red = "#ff0000"
     image somnium = "somnium.jpg"
-    
     # Sprites de Mora
     image mora1 = "images/mora/Mora 1.png"
     image mora2 = "images/mora/Mora 2.png"
@@ -44,6 +43,7 @@ init:
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+    define who = Character("???", who_color= "#b00b")
     define m = Character("Mora",who_color="#69498a")
     define pancake = Character("Pankechi", who_color="#b49247")
     define spam = Character("SPAMTON", who_color="#fffb00", kind=nvl)
@@ -347,10 +347,12 @@ label timies2:
                     jump timies2
                 "Gritar":
                     "Antes de poder preguntar nada sobre qué gritar, Mora se queda congelada y habla en esperanto por un momento. Tras esto, la figura desaparece."
-                    m "texto esperanto placeholder, son las 2 y media de la mañana y no estoy para carácteres especiales, no me jodas"
+                    who "{font=font/NikkyouSans-mLKax.ttf}じゅんぺい フエゴ縁巫女らぞのNo...サリ地パパ区餌ぼろさSuéltame...おぇおぇぉ祖からこぇす"
+                    who "{font=font/NikkyouSans-mLKax.ttf}¡PARA! ペルソナ4ダンシングあるにと¡YOぱらぱてぇらっぱNOもんすたはたぬたりVOYしつふぁいたぐらいたふぉろAふぁたもる..."
                     m "..."
-                    m "Jijiji" #ya veremos si aquí hay audio, aunque lo dudo
-                    m "más texto en esperanto, de verdad que ya lo haré"
+                    who "Jijiji" #ya veremos si aquí hay audio, aunque lo dudo
+                    who "{font=font/NikkyouSans-mLKax.ttf}眼へ久江田年にであしゃPodría ser divertido...パたぽのSolo...場ぞおかめたるぇ多M4t4r..."
+                    who "{font=font/NikkyouSans-mLKax.ttf}霧切霧切me haráぼるまらしすたsentir千尋藤崎vivaダンガンロンパ絵運ヴぃでおじゅえご" 
                     m "..."
                     m "¿Qué me ha pasado?... En cuanto me habéis dicho que grite..."
                     m "¡OH! No sé qué habréis visto, pero ¡es probable que tenga relación con lo ocurrido tras que me desactivaran!"
@@ -369,6 +371,7 @@ label timies3:
             m "Crotolamo"
         "Puerta":
             menu:
+                m "Parece una puerta normal y corriente"
                 "Investigar":
                     m "Parece que esta puerta está atada a un complejo sistema de poleas..."
                     m "Hay un ladrillo cómicamente grande, colocado para que al abrir la puerta, este golpee a la persona en la cabeza y lance una cuerda que atrape su torso."
