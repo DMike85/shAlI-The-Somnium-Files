@@ -554,7 +554,7 @@ label timies4:
                 "Desintegración molecular":
                     play music epic
                     m "¡MUERE!"
-                    play movie "video/atomic_bomb.mp4"
+                    play movie "video/atomic_bomb.mpeg"
                     $ renpy.pause(53.0, hard=True)
                     $ die = True
                     play music investigation
