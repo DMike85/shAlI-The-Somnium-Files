@@ -255,7 +255,7 @@ label timies1:
                     hide mora5
                     show mora11 at left:
                         zoom 0.45
-                    m "Bueno...si así lo habéis decidido... ¡Allá voy!"
+                    m "Bueno...si así lo habéis decidido...{w=0.75} ¡Allá voy!"
                     hide mora11
                     stop music
                     "Mora se hace el seppuku y cae al suelo"
@@ -323,7 +323,7 @@ label timies1:
                     hide mora5
                     show mora1 at left:
                         zoom 0.45
-                    m "Huh... espero que esto no tenga ningún impacto negativo para la cognición de Shali..."
+                    m "Huh...{w=0.75} espero que esto no tenga ningún impacto negativo para la cognición de Shali..."
                     hide mora1
                     scene somnium with Dissolve(1.0)
                     jump timies1
@@ -352,7 +352,7 @@ label timies1:
                     "Mora mantiene pulsado el botón de encendido y la pantalla se ilumina."
                     show mora5 at left:
                         zoom 0.45
-                    m "¡Oh! Se ha encendido... pensé que no tendría batería... ¿Quién pensaría que la opción más obvia sería la correcta? Jeje."
+                    m "¡Oh! Se ha encendido...{w=0.75} pensé que no tendría batería...{w=0.75} ¿Quién pensaría que la opción más obvia sería la correcta? Jeje."
                     hide mora5
                     show mora1 at left:
                         zoom 0.45
@@ -365,7 +365,7 @@ label timies1:
                     show mora1 at left:
                         zoom 0.45
                     m "..."
-                    m "Qué raro... solo hay una app. TO-Witter - Bueno, Z..."
+                    m "Qué raro...{w=0.75} solo hay una app. TO-Witter - Bueno, Z..."
                     hide mora1
                     show mora8 at left:
                         zoom 0.45
@@ -381,7 +381,7 @@ label timies1:
                     hide mora9
                     show mora5 at left:
                         zoom 0.45
-                    m "Parece que no era de su agrado.... o por lo menos, no parece satisfecho con este..."
+                    m "Parece que no era de su agrado....{w=0.75} o por lo menos, no parece satisfecho con este..."
                     hide mora5
                     show mora1 at left:
                         zoom 0.45
@@ -393,7 +393,7 @@ label timies1:
                     hide mora9
                     show mora11 at left:
                         zoom 0.45
-                    m "Pero... no había signos de que más de una persona haya estado en la casa..."
+                    m "Pero...{w=0.75} no había signos de que más de una persona haya estado en la casa..."
                     hide toweet with zoomout
                     hide mora11
                     show mora1 at left:
@@ -441,7 +441,7 @@ label timies2:
             show mora1 at left:
                 zoom 0.45
             menu:
-                m "Es... ¿Es eso un puerro?"
+                m "Es...{w=0.75} ¿Es eso un puerro?"
                 "Investigar":
                     show puerro at truecenter:
                         zoom 0.1
@@ -520,7 +520,7 @@ label timies2:
                     hide mora12
                     show mora10 at left:
                         zoom 0.45
-                    m "Auch... ¿Cómo ha-?"
+                    m "Auch...{w=0.75} ¿Cómo ha-?"
                     m "..."
                     hide mora10
                     show mora11 at left:
@@ -584,7 +584,7 @@ label timies2:
                     hide mora12
                     show mora11 at left:
                         zoom 0.45
-                    m "¿Qué me ha pasado?... En cuanto me habéis dicho que grite..."
+                    m "¿Qué me ha pasado?...{w=0.75} En cuanto me habéis dicho que grite..."
                     hide mora11
                     show mora5 at left:
                         zoom 0.45
@@ -601,7 +601,7 @@ label timies2:
                     hide mora3
                     show mora1 at left:
                         zoom 0.45
-                    m "Llevaba una bandolera negra...Mmm, no es que sea un detalle muy identificativo... pero puede ayudarnos en algún momento."
+                    m "Llevaba una bandolera negra...{w=0.75}Mmm, no es que sea un detalle muy identificativo...{w=0.75} pero puede ayudarnos en algún momento."
                     stop music
                     m "..."
                     play music investigation
@@ -658,7 +658,7 @@ label timies2:
                     hide mora11
                     show mora8 at left:
                         zoom 0.45
-                    m "Bueno...está bien..."
+                    m "Bueno...{w=0.75}está bien..."
                     hide mora8
                     hide marie with zoomout
                     "Mora toma el peluche y lo lanza con todas sus fuerzas."
@@ -689,9 +689,9 @@ label timies3:
             show pico at truecenter:
                         zoom 0.1
                         ease 0.1 zoom 0.5
-            m "Es una especie de pico...Me recuerda a algo."
+            m "Es una especie de pico...{w=0.75}Me recuerda a algo."
             menu:
-                m "Es una especie de pico...Me recuerda a algo.{fast}"
+                m "Es una especie de pico...{w=0.75}Me recuerda a algo.{fast}"
                 "Investigar":
                     hide mora1
                     show mora4 at left:
@@ -772,7 +772,7 @@ label timies3:
             show mora4 at left:
                 zoom 0.45
             menu:
-                m "Parece una puerta normal y corriente"
+                m "Parece una puerta normal y corriente."
                 "Investigar":
                     hide mora4
                     show mora1 at left:
@@ -783,7 +783,7 @@ label timies3:
                     hide mora1
                     show mora11 at left:
                         zoom 0.45
-                    m "Mmmm...la cuerda continua hasta...la viga ligeramente oxidada..."
+                    m "Mmmm...{w=0.75}la cuerda continua hasta...{w=0.75}la viga ligeramente oxidada..."
                     m "Es la misma que la de la escena del crimen..."
                     m "..."
                     hide mora11
@@ -800,7 +800,7 @@ label timies3:
                     hide mora4
                     show mora1 at left:
                         zoom 0.45
-                    m "Ummm...dudo mucho que pueda desarmar esto...No hay ninguna herramienta y no conozco cómo o en qué orden se han ido colocando todos los elementos..."
+                    m "Ummm...{w=0.75}dudo mucho que pueda desarmar esto...{w=0.75}No hay ninguna herramienta y no conozco cómo o en qué orden se han ido colocando todos los elementos..."
                     hide mora1
                     show mora8 at left:
                         zoom 0.45
@@ -819,7 +819,7 @@ label timies3:
                     stop sound
                     show mora12 at left:
                         zoom 0.45
-                    m "Shali...¿Cómo sabes...?...No..."
+                    m "Shali...{w=0.75}¿Cómo sabes...?{w=0.75}...{w=0.75}No..."
                     m "¡Esto no tiene sentido! ¡No ha podido ser ella!"
                     m "Si hubiese sido ella, ¿Por qué aquella figura me desactivó y la atacó?"
                     hide mora12
@@ -833,12 +833,12 @@ label timies3:
                     hide mora9
                     show mora8 at left:
                         zoom 0.45
-                    m "Quizás...simplemente ha estado en la escena del crimen...y ha visto el mecanismo...o puede que el asesino la obligara a mirar de mientras se producía el asesinato..."
+                    m "Quizás...{w=0.75}simplemente ha estado en la escena del crimen...{w=0.75}y ha visto el mecanismo...{w=0.75}o puede que el asesino la obligara a mirar de mientras se producía el asesinato..."
                     m "..."
                     hide mora8
                     show mora11 at left:
                         zoom 0.45
-                    m "Estoy muy preocupada...todo esto tiene muy mala pinta...Shali... ¿Qué te ha hecho?"
+                    m "Estoy muy preocupada...{w=0.75}todo esto tiene muy mala pinta...{w=0.75}Shali... ¿Qué te ha hecho?"
                     hide mora11
                     show mora3 at left:
                         zoom 0.45
@@ -861,7 +861,7 @@ label timies3:
                     stop sound
                     show mora1 at left:
                         zoom 0.45
-                    m "... ¿Creo que le gustan las tortitas?"
+                    m "...{w=0.75} ¿Creo que le gustan las tortitas?"
                     $ pankechi = True
                     hide mora1
                     jump timies3
@@ -1056,7 +1056,7 @@ label timies4:
                 "Drogar":
                     show mora2 at left:
                         zoom 0.45
-                    m "¿Qué? Pero...¡¿Por qué haría algo tan cruel?!"
+                    m "¿Qué? Pero...{w=0.75}¡¿Por qué haría algo tan cruel?!"
                     hide mora2
                     show mora11 at left:
                         zoom 0.45
@@ -1070,7 +1070,7 @@ label timies4:
                             hide mora1
                             show mora11 at left:
                                 zoom 0.45
-                            m "Me imaginaba...no siento que sea lo correcto, además me da mucha pena."
+                            m "Me imaginaba...{w=0.75}no siento que sea lo correcto, además me da mucha pena."
                             hide mora11
                             show mora4 at left:
                                 zoom 0.45
@@ -1081,9 +1081,9 @@ label timies4:
                             hide mora1
                             show mora11 at left:
                                 zoom 0.45
-                            m "Supongo que si me lo pedís vosotros no me queda otra...¿Pero cómo lo hago si no-?"
+                            m "Supongo que si me lo pedís vosotros no me queda otra...{w=0.75}¿Pero cómo lo hago si no-?"
                             "Al poco de empezar a hablar, en la mano de Mora aparece una aguja con lo que parece algún tipo de sedante en su interior."
-                            m "...Supongo que con esto...lo siento mucho..."
+                            m "...Supongo que con esto...{w=0.75}lo siento mucho..."
                             hide mora11
                             "Mora entonces agarra a la figura, la cual forcejea en pánico, y le clava la aguja en la espalda. En cuestión de 1 minuto o menos la figura para de forcejear y cae sedada al suelo."
                             "Tras esto, la figura amenazante aparece detrás de Mora, quien instintivamente se aparta, y se acerca a la figura tirada en el suelo."
