@@ -32,11 +32,7 @@ define config.version = "Versión RC2 1.0.0"
 
 define gui.about = _p("""Un asesinato misterioso que vosotros tendréis que resolver.
 
-Investigad mientras celebráis el cumpleaños de nuestra querida Shali.
-Sprites: Shali
-Guión: Shali
-Diseño de HUD: Mike
-Programación: Mike y Silvia
+Investigad mientras celebráis el cumpleaños de nuestra querida Shali.{p}Sprites: Shali{p}Guión: Shali{p}Diseño de HUD: Mike{p}Programación: Mike y Silvia
 """)
 
 
