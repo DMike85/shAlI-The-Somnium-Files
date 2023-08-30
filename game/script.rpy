@@ -69,6 +69,7 @@ init:
     default die = False
     default emerald = False
 
+    define audio.dissappear = "audio/mysterygo.mp3"
     define audio.felicidades = "audio/felicidades.ogg"
     define audio.error = "audio/error.ogg"
     define audio.spooky = "audio/spooky.mp3"
@@ -924,6 +925,7 @@ label timies3:
                     show mora7 at left:
                         zoom 0.45
                     m "... ¿Qwé? O_O"
+                    play sound dissappear
                     "Justo después de decir eso, Pankechi desaparece espontáneamente."
                     $ pankechi = True
                     hide mora7
