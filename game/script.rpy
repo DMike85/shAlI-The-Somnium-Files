@@ -78,7 +78,7 @@ init:
 # name of the character.
     define who = Character("???", who_color= "#b00b")
     define m = Character("Mora",who_color="#69498a")
-    define pancake = Character("Pankechi", who_color="#b49247")
+    define pancake = Character("Pankechi", who_color="#b49247", ctc = True)
     define spam = Character("SPAMTON", who_color="#fffb00", kind=nvl)
     define nerd = Character("Silvia", who_color="#15ff00")
 
@@ -139,7 +139,7 @@ label start:
 
     # These display lines of dialogue.
 
-    m "¿Eh? {w=1.0}¿Por qué estoy haciendo esto?"
+    m "¿Eh?{w=1.0} ¿Por qué estoy haciendo esto?"
 
     m "..."
     
