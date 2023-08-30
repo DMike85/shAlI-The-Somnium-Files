@@ -37,7 +37,7 @@ init:
         xalign 1.0
         yalign 1.0
         alpha 0
-        pause 0.5
+        pause 1
         block:
             linear 0.5 alpha 1
             "gui/text_icon.png"
