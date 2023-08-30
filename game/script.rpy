@@ -96,6 +96,8 @@ init:
     define audio.bitchass = "audio/bitch_ass.ogg"
     define audio.kill = "audio/asesinato.ogg"
     define audio.suskechi = "audio/suskechi.ogg"
+    define audio.chaos_control = "audio/chaos_control.mp3"
+    define audio.item_get = "audio/item_get.mp3"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -295,7 +297,7 @@ label timies1:
                     hide mora11
                     stop music
                     hide rebellion with zoomout
-                    "Mora se hace el seppuku y cae al suelo"
+                    "Mora se hace el seppuku y cae al suelo."
                     window hide dissolve
                     scene red with Dissolve(0.75)
                     play movie "video/somn_fail.mpeg"
@@ -322,6 +324,7 @@ label timies1:
                 zoom 0.45
             m "..."
             hide mora6
+            hide container
             play music investigation
             jump timies1
         "Teléfono Móvil":
@@ -424,7 +427,7 @@ label timies1:
                     hide mora5
                     show mora1 at left:
                         zoom 0.45
-                    m "Mmm... es bastante curioso que la diferencia de tiempo entre la publicación de este toweet y la hora de la muerte sea tan pequeña..."
+                    m "Mmm...{w=0.75} es bastante curioso que la diferencia de tiempo entre la publicación de este toweet y la hora de la muerte sea tan pequeña..."
                     hide mora1
                     show mora9 at left:
                         zoom 0.45
@@ -447,7 +450,7 @@ label timies1:
             show mora4 at left:
                 zoom 0.45
             menu:
-                m "Un bate de béisbol"
+                m "Un bate de béisbol."
                 "Investigar":
                     hide mora4
                     show mora5 at left:
@@ -469,7 +472,7 @@ label timies1:
                     hide mora4
                     show mora8 at left:
                         zoom 0.45
-                    m "De repento siento unas ganas enormes de golepar a un tal Kevin Kaslana."
+                    m "De repento siento unas ganas enormes de golpear a un tal Kevin Kaslana."
                     hide mora8
                     jump timies1
     "Mora continúa moviéndose por el Somnium mediante vuestras indicaciones y tras poco tiempo se encuentra con más objetos."
@@ -498,7 +501,7 @@ label timies2:
                     menu:
                         "Si":
                             play music miku
-                            "Mora instantáneamente agarra el puerro para bailar al compás de la música"
+                            "Mora instantáneamente agarra el puerro para bailar al compás de la música."
                             "Tras acabar, el puerro desaparece de sus manos."
                             stop music
                             $ puerro = True
@@ -514,7 +517,7 @@ label timies2:
                             jump timies2
                         "Hazlo":
                             play music miku
-                            "Mora instantáneamente agarra el puerro para bailar al compás de la música"
+                            "Mora instantáneamente agarra el puerro para bailar al compás de la música."
                             "Tras acabar, el puerro desaparece de sus manos."
                             stop music
                             $ puerro = True
@@ -530,7 +533,7 @@ label timies2:
                             jump timies2
                         "Por favor":
                             play music miku
-                            "Mora instantáneamente agarra el puerro para bailar al compás de la música"
+                            "Mora instantáneamente agarra el puerro para bailar al compás de la música."
                             "Tras acabar, el puerro desaparece de sus manos."
                             stop music
                             $ puerro = True
@@ -582,12 +585,12 @@ label timies2:
                     scene somnium with Dissolve(1.0)
                     jump timies2
                 "Intentar liberarse":
-                    "Mora forcejea con la figura y en el proceso es capaz de fijarse en que la figura lleva una bandolera negra"
-                    "Consigue soltarse, pero no parece que nada cambie realmente"
+                    "Mora forcejea con la figura y en el proceso es capaz de fijarse en que la figura lleva una bandolera negra."
+                    "Consigue soltarse, pero no parece que nada cambie realmente."
                     show mora2 at left:
                         zoom 0.45
                     m "¿QUÉ NARICES? ¿PERO QUÉ TE PASA?"
-                    m "UGH"
+                    m "¡UGH!"
                     hide mora2
                     show mora3 at left:
                         zoom 0.45
@@ -640,7 +643,7 @@ label timies2:
                     hide mora3
                     show mora1 at left:
                         zoom 0.45
-                    m "Llevaba una bandolera negra...{w=0.75}Mmm, no es que sea un detalle muy identificativo...{w=0.75} pero puede ayudarnos en algún momento."
+                    m "Llevaba una bandolera negra...{w=0.75} Mmm, no es que sea un detalle muy identificativo...{w=0.75} pero puede ayudarnos en algún momento."
                     stop music
                     m "..."
                     play music investigation
@@ -667,6 +670,7 @@ label timies2:
                     m "Recuerdo ver a Shali jugar al tercer juego y ver a este personaje en el modo historia."
                     m "Después de que me contara sobre el lore de los juegos yo también me interesé."
                     hide marie with zoomout
+                    hide mora4
                     jump timies2
                 "Abrazar":
                     hide mora9
@@ -684,7 +688,7 @@ label timies2:
                     show mora11 at left:
                         zoom 0.45
                     m "Sé que estamos en un somnium y que no es real, pero..."
-                    m "...me lo quiero llevar..."
+                    m "... me lo quiero llevar..."
                     hide mora11
                     hide marie with zoomout
                     jump timies2
@@ -697,7 +701,7 @@ label timies2:
                     hide mora11
                     show mora8 at left:
                         zoom 0.45
-                    m "Bueno...{w=0.75}está bien..."
+                    m "Bueno...{w=0.75} está bien..."
                     hide mora8
                     hide marie with zoomout
                     "Mora toma el peluche y lo lanza con todas sus fuerzas."
@@ -730,9 +734,9 @@ label timies3:
             show pico at truecenter:
                         zoom 0.1
                         ease 0.1 zoom 0.5
-            m "Es una especie de pico...{w=0.75}Me recuerda a algo."
+            m "Es una especie de pico...{w=0.75} Me recuerda a algo."
             menu:
-                m "Es una especie de pico...{w=0.75}Me recuerda a algo.{fast}"
+                m "Es una especie de pico...{w=0.75} Me recuerda a algo.{fast}"
                 "Investigar":
                     hide mora1
                     show mora4 at left:
@@ -829,7 +833,7 @@ label timies3:
                     hide mora1
                     show mora11 at left:
                         zoom 0.45
-                    m "Mmmm...{w=0.75}la cuerda continua hasta...{w=0.75}la viga ligeramente oxidada..."
+                    m "Mmmm...{w=0.75} la cuerda continua hasta...{w=0.75} la viga ligeramente oxidada..."
                     m "Es la misma que la de la escena del crimen..."
                     m "..."
                     hide mora11
@@ -848,7 +852,7 @@ label timies3:
                     hide mora4
                     show mora1 at left:
                         zoom 0.45
-                    m "Ummm...{w=0.75}dudo mucho que pueda desarmar esto...{w=0.75}No hay ninguna herramienta y no conozco cómo o en qué orden se han ido colocando todos los elementos..."
+                    m "Ummm...{w=0.75} dudo mucho que pueda desarmar esto...{w=0.75} No hay ninguna herramienta y no conozco cómo o en qué orden se han ido colocando todos los elementos..."
                     hide mora1
                     show mora8 at left:
                         zoom 0.45
@@ -864,7 +868,7 @@ label timies3:
                     "Mora abre la puerta."
                     stop music
                     play music kill
-                    "Miguel aparece, y todo el sistema de poleas repite el mismo proceso que en la realidad. En cuanto abre la puerta, un ladrillo cómicamente grande le golpea en la cabeza dejándolo K.O"
+                    "Miguel aparece, y todo el sistema de poleas repite el mismo proceso que en la realidad. En cuanto abre la puerta, un ladrillo cómicamente grande le golpea en la cabeza dejándolo K.O."
                     "De mientras cae al suelo, una cuerda se engancha a su torso, atrapándolo. Las poleas comienzan a moverse y arrastran el cuerpo por el suelo hasta llegar a una ventana."
                     play sound glass
                     "La cuerda tira del cuerpo y lo saca de la casa por la ventana para seguir arrastrándolo por la calle hasta la obra más cercana."
@@ -873,7 +877,7 @@ label timies3:
                     "Una vez colocado en posición, sobre este cae una viga, ligeramente oxidada, dejando su cadáver en la misma posición y en las mismas condiciones en las que se había encontrado el cuerpo."
                     show mora12 at left:
                         zoom 0.45
-                    m "Shali...{w=0.75}¿Cómo sabes...?{w=0.75}...{w=0.75}No..."
+                    m "Shali...{w=0.75} ¿Cómo sabes?{w=0.75}...{w=0.75} No..."
                     m "¡Esto no tiene sentido! ¡No ha podido ser ella!"
                     play music investigation
                     m "Si hubiese sido ella, ¿Por qué aquella figura me desactivó y la atacó?"
@@ -888,12 +892,12 @@ label timies3:
                     hide mora9
                     show mora8 at left:
                         zoom 0.45
-                    m "Quizás...{w=0.75}simplemente ha estado en la escena del crimen...{w=0.75}y ha visto el mecanismo...{w=0.75}o puede que el asesino la obligara a mirar de mientras se producía el asesinato..."
+                    m "Quizás...{w=0.75} simplemente ha estado en la escena del crimen...{w=0.75} y ha visto el mecanismo...{w=0.75} o puede que el asesino la obligara a mirar de mientras se producía el asesinato..."
                     m "..."
                     hide mora8
                     show mora11 at left:
                         zoom 0.45
-                    m "Estoy muy preocupada...{w=0.75}todo esto tiene muy mala pinta...{w=0.75}Shali... ¿Qué te ha hecho?"
+                    m "Estoy muy preocupada...{w=0.75} todo esto tiene muy mala pinta...{w=0.75} Shali... ¿Qué te ha hecho?"
                     hide mora11
                     show mora3 at left:
                         zoom 0.45
@@ -1052,7 +1056,7 @@ label timies4:
                     hide mora4
                     hide emerald with zoomout
                     "De repente a Mora le parece bastante apetecible la joya y se la come..."
-                    "...Simplemente se la come..."
+                    "... Simplemente se la come..."
                     show mora1 at left:
                         zoom 0.45
                     m "Mmmm..."
@@ -1107,11 +1111,13 @@ label timies4:
                     hide mora1
                     show mora9 at left:
                         zoom 0.45
+                    play sound chaos_control
                     m "¡CHAOS CONTROL!"
                     hide mora9
                     hide emerald with zoomout
                     stop music
                     "El tiempo se para por unos momentos."
+                    play sound item_get
                     "Enhorabuena ¡Has desbloqueado ”Chaos Control”."
                     $ emerald = True
                     play music investigation
@@ -1125,7 +1131,7 @@ label timies4:
                 "Consolar":
                     "Mora se acerca a la figura y la abraza."
                     show mora11 at left:
-                    
+                        zoom 0.45
                     m "Shhhhh todo está bien..."
                     hide mora11
                     "La figura no reacciona."
@@ -1155,7 +1161,7 @@ label timies4:
                 "Drogar":
                     show mora2 at left:
                         zoom 0.45
-                    m "¿Qué? Pero...{w=0.75}¡¿Por qué haría algo tan cruel?!"
+                    m "¿Qué? Pero...{w=0.75} ¡¿Por qué haría algo tan cruel?!"
                     hide mora2
                     show mora11 at left:
                         zoom 0.45
@@ -1169,7 +1175,7 @@ label timies4:
                             hide mora1
                             show mora11 at left:
                                 zoom 0.45
-                            m "Me imaginaba...{w=0.75}no siento que sea lo correcto, además me da mucha pena."
+                            m "Me imaginaba...{w=0.75} no siento que sea lo correcto, además me da mucha pena."
                             hide mora11
                             show mora4 at left:
                                 zoom 0.45
@@ -1181,9 +1187,9 @@ label timies4:
                             hide mora1
                             show mora11 at left:
                                 zoom 0.45
-                            m "Supongo que si me lo pedís vosotros no me queda otra...{w=0.75}¿Pero cómo lo hago si no-?"
+                            m "Supongo que si me lo pedís vosotros no me queda otra...{w=0.75} ¿Pero cómo lo hago si no-?"
                             "Al poco de empezar a hablar, en la mano de Mora aparece una aguja con lo que parece algún tipo de sedante en su interior."
-                            m "...Supongo que con esto...{w=0.75}lo siento mucho..."
+                            m "... Supongo que con esto...{w=0.75} lo siento mucho..."
                             hide mora11
                             stop music
                             play music spooky
@@ -1194,7 +1200,7 @@ label timies4:
                             "Tras esto la figura se aleja y en ese proceso Mora y vosotros sois capaces de ver que la figura lleva una bandolera negra y dos pulseras."
                             show mora8 at left:
                                 zoom 0.45
-                            m "...Creo que esto nos deja claro que esa figura es la responsable de todo."
+                            m "... Creo que esto nos deja claro que esa figura es la responsable de todo."
                             m "Lo que quiere decir que la figura del suelo..."
                             hide mora8
                             show mora3 at left:
