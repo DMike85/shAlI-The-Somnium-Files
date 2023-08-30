@@ -45,7 +45,7 @@ Programación: Mike y Silvia
 ## or semicolons.
 
 define build.name = "shAlITheSomniumFiles"
-define build.directory_name = "RC_1.0.0"
+define build.directory_name = "RC2_1.0.0"
 
 
 ## Sounds and music ############################################################
