@@ -1,5 +1,4 @@
 ﻿# odio programar
-
 init:
     #scenes
     image black = "#000000"
