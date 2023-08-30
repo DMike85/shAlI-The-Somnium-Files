@@ -762,7 +762,7 @@ screen preferences():
                     style_prefix "check"
                     label _("Saltar")
                     textbutton _("Texto sin leer") action Preference("skip", "toggle")
-                    textbutton _("Pos-Decisiones") action Preference("after choices", "toggle")
+                    textbutton _("Post-Decisiones") action Preference("after choices", "toggle")
                     textbutton _("Transiciones") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
