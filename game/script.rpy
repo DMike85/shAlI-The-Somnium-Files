@@ -43,6 +43,7 @@ init:
             "gui/text_icon.png"
             linear 0.5 alpha 0
             repeat
+    image logo = "gui/logo.png"
     image movil_lock = "images/locks/movil_lock.png"
     image figura_lock = "images/locks/figura_lock.png"
     image polea_lock = "images/locks/polea_lock.png"
@@ -70,6 +71,7 @@ init:
     default emerald = False
 
     define audio.dissappear = "audio/mysterygo.mp3"
+    define audio.splash = "audio/splash.wav"
     define audio.felicidades = "audio/felicidades.ogg"
     define audio.error = "audio/error.ogg"
     define audio.spooky = "audio/spooky.mp3"
@@ -93,6 +95,7 @@ init:
     define audio.metal_pipe = "audio/metal_pipe.mp3"
     define audio.bitchass = "audio/bitch_ass.ogg"
     define audio.kill = "audio/asesinato.ogg"
+    define audio.suskechi = "audio/suskechi.ogg"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -106,15 +109,22 @@ init:
 label splashscreen:
     scene black
     with Pause(1)
-
-    show text "Estoy hasta los huevos..." with dissolve
+    show text "Un proyecto hecho en 3 días..." with dissolve
     with Pause(2)
-    show text "presenta..." with dissolve
-    with Pause(2)
-
     hide text with dissolve
     with Pause(1)
-    
+    show text "Para una fecha especial..." with dissolve
+    with Pause(2)
+    hide text with dissolve
+    with Pause(1)
+    show text "3 mamertos presentan..." with dissolve
+    with Pause(2)
+    hide text with dissolve
+    with Pause(2)
+    show logo at truecenter
+    play sound splash
+    with Pause(5)
+
     return 
 
 # The game starts here.
@@ -896,6 +906,7 @@ label timies3:
                     scene somnium with Dissolve(1.0)
         "Pankechi" if not pankechi:
             stop music
+            play music suskechi
             show suskechi at left
             menu:
                 "Darle tortitas":
@@ -917,6 +928,7 @@ label timies3:
                     $ pankechi = True
                     hide pankechi
                     hide mora1
+                    stop music
                     jump timies3
                 "Oh dios mío, Pankechi del famoso videojuego People 5":
                     "Al momento de decir esto, Pankechi mira a Mora y comienza a gritar:"
@@ -929,6 +941,7 @@ label timies3:
                     "Justo después de decir eso, Pankechi desaparece espontáneamente."
                     $ pankechi = True
                     hide mora7
+                    stop music
                     jump timies3
                 "Disparar en la cabeza":
                     "Mora saca un arma que aparece de Dios sabe dónde."
@@ -952,6 +965,7 @@ label timies3:
                     m "Ups, creo que ese era del People 3."
                     $ pankechi = True
                     hide mora11
+                    stop music
                     jump timies3
         "Bandera lesbiana":
             show mora4 at left:
