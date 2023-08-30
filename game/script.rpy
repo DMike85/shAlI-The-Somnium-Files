@@ -29,12 +29,16 @@ init:
     #other sprites
     image spamton = "images/spamton.png"
     image nerd = "images/nerd.png"
+    image suskechi = "images/suskechi.png"
+    image pankechi = "images/pankechi.png"
 
     #images
     image movil_lock = "images/locks/movil_lock.png"
     image figura_lock = "images/locks/figura_lock.png"
     image polea_lock = "images/locks/polea_lock.png"
     image bolita_lock = "images/locks/bolita_lock.png"
+    image rebellion = "images/rebellion.png"
+    image container = "images/container.png"
     image toweet = "images/miguel_toweet.png"
     image bate = "images/bate.png"
     image puerro = "images/puerro.png"
@@ -42,6 +46,10 @@ init:
     image marie = "images/marie.png"
     image pico = "images/pico.png"
     image senior = "images/senior.png"
+    image puerta = "images/puerta.png"
+    image lesbo = "images/lesbo.png"
+    image optz = "images/optz.png"
+    image emerald = "images/emerald.png"
 
     $ flash = Fade(.25, 0, .75, color="#ffffff")
     default pankechi = False
@@ -73,6 +81,7 @@ init:
     define audio.noise = "audio/white_noise.mp3"
     define audio.metal_pipe = "audio/metal_pipe.mp3"
     define audio.bitchass = "audio/bitch_ass.ogg"
+    define audio.kill = "audio/asesinato.ogg"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -81,6 +90,7 @@ init:
     define pancake = Character("Pankechi", who_color="#b49247", ctc = True)
     define spam = Character("SPAMTON", who_color="#fffb00", kind=nvl)
     define nerd = Character("Silvia", who_color="#15ff00")
+    define shali = Character("?", who_color="#929292")
 
 label splashscreen:
     scene black
@@ -219,7 +229,10 @@ label timies1:
     menu:
         "Espada legendaria":
             show mora5 at left:
-                    zoom 0.45
+                zoom 0.45
+            show rebellion at truecenter:
+                zoom 0.1
+                ease 0.1 zoom 0.5
             m "Parece una espada, está muy decorada."
             menu:
                 m "Parece una espada, está muy decorada.{fast}"
@@ -243,6 +256,7 @@ label timies1:
                         zoom 0.45
                     m "Ugh..."
                     hide mora1
+                    hide rebellion with zoomout
                     jump timies1
                 "Alzar":
                     hide mora5
@@ -259,6 +273,7 @@ label timies1:
                     m "Bueno...si así lo habéis decidido...{w=0.75} ¡Allá voy!"
                     hide mora11
                     stop music
+                    hide rebellion with zoomout
                     "Mora se hace el seppuku y cae al suelo"
                     window hide dissolve
                     scene red with Dissolve(0.75)
@@ -271,6 +286,8 @@ label timies1:
         "Contenedor de basura":
             play music spamton
             show spamton at left
+            show container at right:
+                zoom 0.4
             spam "HEY EVERY !! IT'S ME!!! EV3RY BUDDY 'S FAVORITE [[Number 1 Rated Salesman1997]] SPAMT SPAMTON G. SPAMTON!! WOAH!! IF IT ISN'T A... LIGHT nER! HEY-HE Y HEY!!! LOOKS LIKE YOU'RE{nw}" 
             spam "[[All Alone On A Late Night?]] ALL YOUR FRIENDS, [[Abandoned you for the slime]] YOU ARE? SALES, GONE DOWN THE [[Drain]] [[Drain]]?? LIVING IN A GODDAMN GARBAGE CAN???{nw}" 
             spam "WELL HAVE I GOT A [[Specil Deal]] FOR LONELY [[Hearts]] LIKE YOU!! IF YOU'VE [[Lost Control Of Your Life]] THEN YOU JUST GOTTA GRAB IT BY THE [[Silly Strings]] WHY BE THE [[Little Sponge]]{nw}" 
@@ -682,6 +699,8 @@ label timies2:
     "Miráis alrededor de la sala, buscando más objetos, cuando de la nada, estos aparecen ante vosotros."
 label timies3:
     if senior:
+        play music investigation
+    if pankechi:
         play music investigation   
     menu:
         "Pico pixelado":
@@ -729,6 +748,7 @@ label timies3:
                     "Mora trata de coger el pico numerosas veces, pero falla en todas ellas."
                     play sound error
                     "404 inventory not found"
+                    hide mora1
                     show mora4 at left:
                         zoom 0.45
                     m "...{w=0.75}{nw}"
@@ -770,8 +790,12 @@ label timies3:
                     hide mora3
                     jump timies3
         "Puerta":
+            scene polea with Dissolve(1.0)
             show mora4 at left:
                 zoom 0.45
+            show puerta at truecenter:
+                zoom 0.1
+                ease 0.1 zoom 0.5
             menu:
                 m "Parece una puerta normal y corriente."
                 "Investigar":
@@ -796,6 +820,8 @@ label timies3:
                         zoom 0.45
                     m "(...)"
                     hide mora11
+                    hide puerta with zoomout
+                    scene somnium with Dissolve(1.0)
                     jump timies3
                 "Desarmar":
                     hide mora4
@@ -807,21 +833,28 @@ label timies3:
                         zoom 0.45
                     m "No creo que sea la opción correcta."
                     hide mora8
+                    hide puerta with zoomout
+                    scene somnium with Dissolve(1.0)
                     jump timies3
                 "Abrir":
                     hide mora4
+                    hide puerta with zoomout
                     play sound door
                     "Mora abre la puerta."
+                    stop music
+                    play music kill
                     "Miguel aparece, y todo el sistema de poleas repite el mismo proceso que en la realidad. En cuanto abre la puerta, un ladrillo cómicamente grande le golpea en la cabeza dejándolo K.O"
                     "De mientras cae al suelo, una cuerda se engancha a su torso, atrapándolo. Las poleas comienzan a moverse y arrastran el cuerpo por el suelo hasta llegar a una ventana."
+                    play sound glass
                     "La cuerda tira del cuerpo y lo saca de la casa por la ventana para seguir arrastrándolo por la calle hasta la obra más cercana."
+                    stop music
                     play sound metal_pipe
                     "Una vez colocado en posición, sobre este cae una viga, ligeramente oxidada, dejando su cadáver en la misma posición y en las mismas condiciones en las que se había encontrado el cuerpo."
-                    stop sound
                     show mora12 at left:
                         zoom 0.45
                     m "Shali...{w=0.75}¿Cómo sabes...?{w=0.75}...{w=0.75}No..."
                     m "¡Esto no tiene sentido! ¡No ha podido ser ella!"
+                    play music investigation
                     m "Si hubiese sido ella, ¿Por qué aquella figura me desactivó y la atacó?"
                     hide mora12
                     show mora8 at left:
@@ -849,11 +882,18 @@ label timies3:
                         zoom 0.45
                     m "Solo nos queda un neurocandado. ¡Podemos hacerlo! ¡Saquemos la verdad a la luz!"
                     hide mora8
+                    scene somnium with Dissolve(1.0)
         "Pankechi" if not pankechi:
+            stop music
+            show suskechi at left
             menu:
                 "Darle tortitas":
                     "Mora obtiene unas tortitas y se las ofrece."
+                    hide suskechi
+                    show pankechi at left
+                    pause 0.5
                     play sound footsteps
+                    hide pankechi with moveoutleft
                     "Pankechi las coloca en su cabeza mientras se aleja."
                     stop sound
                     "Crees escucharle decir..."
@@ -864,11 +904,13 @@ label timies3:
                         zoom 0.45
                     m "...{w=0.75} ¿Creo que le gustan las tortitas?"
                     $ pankechi = True
+                    hide pankechi
                     hide mora1
                     jump timies3
                 "Oh dios mío, Pankechi del famoso videojuego People 5":
                     "Al momento de decir esto, Pankechi mira a Mora y comienza a gritar:"
                     pancake "Ueghhh.. (o^▽^o) i'm getting a wawm tingwy f-feewing fwom all this power!"
+                    hide suskechi
                     show mora7 at left:
                         zoom 0.45
                     m "... ¿Qwé? O_O"
@@ -878,14 +920,17 @@ label timies3:
                     jump timies3
                 "Disparar en la cabeza":
                     "Mora saca un arma que aparece de Dios sabe dónde."
+                    hide suskechi
                     show mora9 at left:
                         zoom 0.45
                     m "¡Persona!"
-                    play sound gunshot
-                    "Mora aprieta el gatillo y le dispara."
-                    stop sound
-                    "Pankechi se muere."
                     hide mora9
+                    play sound gunshot
+                    scene red
+                    scene somnium with Dissolve (0.25)
+                    "Mora aprieta el gatillo y le dispara."
+                    "Pankechi muere."
+                    
                     show mora12 at left:
                         zoom 0.45
                     m "..."
@@ -899,6 +944,9 @@ label timies3:
         "Bandera lesbiana":
             show mora4 at left:
                 zoom 0.45
+            show lesbo at truecenter:
+                zoom 0.1
+                ease 0.1 zoom 0.5
             m "Mujeres..."
             menu:
                 m "Mujeres...{fast}"
@@ -909,6 +957,7 @@ label timies3:
                         zoom 0.45
                     m "¡ADORO MI PAÍS!"
                     hide mora9
+                    hide lesbo with zoomout
                     jump timies3
     "Mora y los demás os desplazáis hacia la última parte de la habitación donde encontráis los siguientes objetos."
 label timies4:       
@@ -916,6 +965,9 @@ label timies4:
         "CaricaturazAbiertas" if not die:
             show mora3 at left:
                 zoom 0.45
+            show optz at truecenter:
+                zoom 0.1
+                ease 0.1 zoom 0.5
             m "No sé qué es eso, pero por alguna extraña razón me provoca violencia."
             menu:
                 m "No sé qué es eso, pero por alguna extraña razón me provoca violencia.{fast}"
@@ -923,6 +975,7 @@ label timies4:
                     hide mora3
                     "Mora agarra el icono de CaricaturazAbiertas y lo DESTROZA hasta el punto de que apenas quedan restos de este."
                     $ die = True
+                    hide optz with zoomout
                     show mora14 at left:
                         zoom 0.45
                     m "..."
@@ -939,10 +992,13 @@ label timies4:
                     show mora2 at left:
                         zoom 0.45
                     m "¡ARDE EN LAS PROFUNDIDADES DEL INFIERNO!"
+                    stop music
                     play movie "video/optz_fire.mpeg"
                     $ renpy.pause(9.0, hard= True)
                     $ die = True
+                    play music investigation
                     hide mora2
+                    hide optz with zoomout
                     jump timies4
                 "Desintegración molecular":
                     hide mora3
@@ -951,6 +1007,7 @@ label timies4:
                         zoom 0.45
                     m "¡MUERE!"
                     hide mora9
+                    hide optz with zoomout
                     play movie "video/atomic_bomb.mpeg"
                     $ renpy.pause(53.0, hard=True)
                     $ die = True
@@ -959,10 +1016,15 @@ label timies4:
         "Esmeralda del caos" if not emerald:
             show mora4 at left:
                 zoom 0.45
+            show emerald at truecenter:
+                zoom 0.1
+                ease 0.1 zoom 0.5
+            m "Es una joya de un color verdoso."
             menu:
-                m "Es una joya de un color verdoso."
+                m "Es una joya de un color verdoso.{fast}"
                 "Comer":
                     hide mora4
+                    hide emerald with zoomout
                     "De repente a Mora le parece bastante apetecible la joya y se la come..."
                     "...Simplemente se la come..."
                     show mora1 at left:
@@ -977,6 +1039,7 @@ label timies4:
                     jump timies4
                 "Hacer un anuncio":
                     hide mora4
+                    hide emerald with zoomout
                     "Mora mira su mano y de repente encuentra un micrófono, al parecer también tiene una cámara apuntándola."
                     "Está en directo por alguna razón..."
                     show mora1 at left:
@@ -1020,6 +1083,7 @@ label timies4:
                         zoom 0.45
                     m "¡CHAOS CONTROL!"
                     hide mora9
+                    hide emerald with zoomout
                     stop music
                     "El tiempo se para por unos momentos."
                     "Enhorabuena ¡Has desbloqueado ”Chaos Control”."
@@ -1027,18 +1091,23 @@ label timies4:
                     play music investigation
                     jump timies4
         "Figura hecha bolita agarrándose la cabeza":
+            scene bolita with Dissolve(1.0)
             "Cuándo Mora se acerca a la figura, se puede escuchar un sollozo muy suave y la voz de la figura diciendo:"
-            "”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?” ”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?”"
+            shali "”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?” ”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?”"
             menu:
                 "”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?” ”¡Yo no quería!” ”¿Qué he hecho?” ”¿Qué me han hecho?”{fast}"
                 "Consolar":
                     "Mora se acerca a la figura y la abraza."
                     show mora11 at left:
-                        zoom 0.45
+                    
                     m "Shhhhh todo está bien..."
+                    hide mora11
                     "La figura no reacciona."
+                    show mora11 at left:
+                        zoom 0.45
                     m "No parece que le haya ayudado a sentirse mejor..."
                     hide mora11
+                    scene somnium with Dissolve(1.0)
                     jump timies4
                 "Felicitar":
                     "Sin pensarlo dos veces Mora aplaude y felicita a la figura."
@@ -1055,6 +1124,7 @@ label timies4:
                         zoom 0.45
                     m "¿Por qué he hecho eso? y ¿En que iba a ayudar?"
                     hide mora8
+                    scene somnium with Dissolve(1.0)
                     jump timies4
                 "Drogar":
                     show mora2 at left:
@@ -1079,6 +1149,7 @@ label timies4:
                                 zoom 0.45
                             m "Probemos otra cosa."
                             hide mora4
+                            scene somnium with Dissolve(1.0)
                             jump timies4
                         "Sí":
                             hide mora1
@@ -1088,6 +1159,8 @@ label timies4:
                             "Al poco de empezar a hablar, en la mano de Mora aparece una aguja con lo que parece algún tipo de sedante en su interior."
                             m "...Supongo que con esto...{w=0.75}lo siento mucho..."
                             hide mora11
+                            stop music
+                            play music spooky
                             "Mora entonces agarra a la figura, la cual forcejea en pánico, y le clava la aguja en la espalda. En cuestión de 1 minuto o menos la figura para de forcejear y cae sedada al suelo."
                             "Tras esto, la figura amenazante aparece detrás de Mora, quien instintivamente se aparta, y se acerca a la figura tirada en el suelo."
                             "La figura amenazante procede a decirle en un tono medianamente burlón: ”¿Ahora cómo van a descubrirme si tú has hecho todo? Je." 
@@ -1102,7 +1175,10 @@ label timies4:
                                 zoom 0.45
                             m "..."
                             m "Ese bastardo..."
-                            hide mora3   
+                            hide mora3
+    stop music
+    play music investigation
+    scene somnium with Dissolve(1.0)
     show mora12 at left:
         zoom 0.45
     m "Mierda, no nos queda tiempo ¡Tenemos que salir! ¡Tendréis que averiguar su identidad vosotros!"
