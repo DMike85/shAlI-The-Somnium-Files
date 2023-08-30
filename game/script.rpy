@@ -31,6 +31,17 @@ init:
     image nerd = "images/nerd.png"
 
     #images
+    image ctc:
+        "gui/window_icon.png"
+        xalign 0.0
+        yalign 0.0
+        alpha 0
+        pause 2
+        block:
+            linear 3 alpha 1
+            "gui/window_icon.png"
+            linear 3 alpha 0
+            repeat
     image movil_lock = "images/locks/movil_lock.png"
     image figura_lock = "images/locks/figura_lock.png"
     image polea_lock = "images/locks/polea_lock.png"
@@ -77,8 +88,8 @@ init:
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
     define who = Character("???", who_color= "#b00b")
-    define m = Character("Mora",who_color="#69498a")
-    define pancake = Character("Pankechi", who_color="#b49247", ctc = True)
+    define m = Character("Mora",who_color="#69498a", ctc = "ctc", ctc_pause = "ctc", ctc_position = "fixed")
+    define pancake = Character("Pankechi", who_color="#b49247")
     define spam = Character("SPAMTON", who_color="#fffb00", kind=nvl)
     define nerd = Character("Silvia", who_color="#15ff00")
 
