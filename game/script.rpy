@@ -97,7 +97,7 @@ init:
     define audio.kill = "audio/asesinato.ogg"
     define audio.suskechi = "audio/suskechi.ogg"
     define audio.chaos_control = "audio/chaos_control.mp3"
-    define audio.item_get = "audio/item_get.mp3"
+    define audio.item_get = "audio/item_get.wav"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
