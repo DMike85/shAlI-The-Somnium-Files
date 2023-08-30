@@ -950,6 +950,7 @@ label timies3:
                         zoom 0.45
                     m "¡Persona!"
                     hide mora9
+                    stop music
                     play sound gunshot
                     scene red
                     scene somnium with Dissolve (0.25)
@@ -965,7 +966,6 @@ label timies3:
                     m "Ups, creo que ese era del People 3."
                     $ pankechi = True
                     hide mora11
-                    stop music
                     jump timies3
         "Bandera lesbiana":
             show mora4 at left:
