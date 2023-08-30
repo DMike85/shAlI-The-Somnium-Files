@@ -24,7 +24,7 @@ define gui.show_version = True
 
 ## The version of the game.
 
-define config.version = "Versión RC2 1.0.0"
+define config.version = "Versión 1.0.0"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -41,7 +41,7 @@ Investigad mientras celebráis el cumpleaños de nuestra querida Shali.{p}Sprite
 ## or semicolons.
 
 define build.name = "shAlITheSomniumFiles"
-define build.directory_name = "RC2_1.0.0"
+define build.directory_name = "release_1.0.0"
 
 
 ## Sounds and music ############################################################
