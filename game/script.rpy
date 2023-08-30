@@ -51,6 +51,7 @@ init:
     default die = False
     default emerald = False
 
+    define audio.felicidades = "audio/felicidades.ogg"
     define audio.error = "audio/error.ogg"
     define audio.spooky = "audio/spooky.mp3"
     define audio.laugh = "audio/girl_laugh.mp3"
@@ -1043,6 +1044,7 @@ label timies4:
                     "Sin pensarlo dos veces Mora aplaude y felicita a la figura."
                     show mora4 at left:
                         zoom 0.45
+                    play sound felicidades
                     m "¡Felicidades!"
                     hide mora4
                     show mora11 at left:
