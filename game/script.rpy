@@ -935,10 +935,11 @@ label timies4:
                 "Quemar":
                     hide mora3
                     "Mora se apresura en tomar un mechero y lo prende fuego de manera casi inmediata."
-                    #no sé si vais a querer poner el video, pero inserte aquí
                     show mora2 at left:
                         zoom 0.45
                     m "¡ARDE EN LAS PROFUNDIDADES DEL INFIERNO!"
+                    play movie "video/optz_fire.mpeg"
+                    $ renpy.pause(9.0, hard= True)
                     $ die = True
                     hide mora2
                     jump timies4
